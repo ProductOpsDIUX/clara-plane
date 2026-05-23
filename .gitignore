@@ -3,6 +3,7 @@ node_modules/
 *.log
 .env
 .env.local
+AI_HANDOFF.md
 
 # Next.js / CLARA site
 .next/
