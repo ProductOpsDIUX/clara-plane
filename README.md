@@ -7,7 +7,6 @@ CLARA is **Research-only** and **Confluence-only**. She reads, traverses, and qu
 ## Repository layout
 
 ```
-AI_HANDOFF.md          handoff brief — read first
 persona.md             CLARA's voice, behaviour, refusal patterns
 conventions/           shared rules (MCP discipline, KB paths, cascade, context)
 artefacts/             per-artefact briefs (10 of them)
@@ -47,5 +46,3 @@ CLARA reaches users through three channels, all generated from the same source:
 ## Boundary with the portal
 
 CLARA is the canonical source for Research+Confluence prompts. The portal pulls from `dist/prompts/` at build time and stamps each synced file with `source: clara` plus the CLARA commit SHA. The sync is one-way: CLARA → portal. The portal never edits CLARA prompts in place; changes are made in CLARA's source files and propagated by re-running the sync.
-
-See [AI_HANDOFF.md](./AI_HANDOFF.md) for the full architectural picture.
