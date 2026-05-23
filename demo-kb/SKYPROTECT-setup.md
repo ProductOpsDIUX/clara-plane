@@ -640,9 +640,9 @@ Secondary: **Air-defence commanders** (see `Programme-wide / Personas (Programme
 
 ---
 
-| Session ID   | (assigned by CLARA — do not edit)                       |
-| Participants | e.g. Console operator (x2), Air-defence commander (x1)  |
-| User group   |                                                         |
+- **Session ID:** (assigned by CLARA — do not edit)
+- **Participants:** e.g. Console operator (x2), Air-defence commander (x1)
+- **User group:** 
 
 ---
 
@@ -688,9 +688,9 @@ _Exact words from participants only. Attribute to role where possible — e.g. C
 
 ---
 
-| Session ID   | (assigned by CLARA — do not edit)                       |
-| Participants | e.g. Console operator (x2), Air-defence commander (x1)  |
-| User group   |                                                         |
+- **Session ID:** (assigned by CLARA — do not edit)
+- **Participants:** e.g. Console operator (x2), Air-defence commander (x1)
+- **User group:** 
 
 ---
 
@@ -715,9 +715,9 @@ _Exact words from participants only. Attribute to role where possible — e.g. C
 - **Body:**
 
 ```
-| Session ID   | S13                                                     |
-| Participants | Air-defence commander (x1) — Lt Col, 18 yrs exp        |
-| User group   | Commanders (central ops room)                           |
+- **Session ID:** S13
+- **Participants:** Air-defence commander (x1) — Lt Col, 18 yrs exp
+- **User group:** Commanders (central ops room)
 
 ---
 
@@ -750,9 +750,9 @@ Commander: "If I'm visibly watching their screen they slow down. I've stopped do
 - **Body:**
 
 ```
-| Session ID   | S14                                                     |
-| Participants | Air-defence commander (x1) — Maj, 12 yrs exp           |
-| User group   | Commanders (central ops room)                           |
+- **Session ID:** S14
+- **Participants:** Air-defence commander (x1) — Maj, 12 yrs exp
+- **User group:** Commanders (central ops room)
 
 ---
 
@@ -785,9 +785,9 @@ Commander: "I've literally trained myself to count to two before the high-stakes
 - **Body:**
 
 ```
-| Session ID   | S15                                                     |
-| Participants | Air-defence commander (x1) — Lt Col, 22 yrs exp        |
-| User group   | Commanders (central ops room)                           |
+- **Session ID:** S15
+- **Participants:** Air-defence commander (x1) — Lt Col, 22 yrs exp
+- **User group:** Commanders (central ops room)
 
 ---
 
@@ -824,9 +824,9 @@ Commander: "I want to be able to sleep on the call. Right now the only record is
 - **Body:**
 
 ```
-| Session ID   | S16                                                     |
-| Participants | Air-defence commander (x1) — Lt Col, 16 yrs exp        |
-| User group   | Commanders (central ops room)                           |
+- **Session ID:** S16
+- **Participants:** Air-defence commander (x1) — Lt Col, 16 yrs exp
+- **User group:** Commanders (central ops room)
 
 ---
 
@@ -859,9 +859,9 @@ Commander: "I keep my own log on paper because I don't trust the system to recor
 - **Body:**
 
 ```
-| Session ID   | S01                                                     |
-| Participants | Console operator (x1) — 8 yrs exp, Site Alpha           |
-| User group   | Operators                                               |
+- **Session ID:** S01
+- **Participants:** Console operator (x1) — 8 yrs exp, Site Alpha
+- **User group:** Operators
 
 ---
 
@@ -894,9 +894,9 @@ Operator: "If radar and RF disagree, I'm just guessing. There's no tool for that
 - **Body:**
 
 ```
-| Session ID   | S02                                                     |
-| Participants | Console operator (x1) — 6 yrs exp, Site Alpha           |
-| User group   | Operators                                               |
+- **Session ID:** S02
+- **Participants:** Console operator (x1) — 6 yrs exp, Site Alpha
+- **User group:** Operators
 
 ---
 
@@ -929,9 +929,9 @@ Operator: "The heli-pad gives a return every morning at 0600. I've figured that 
 - **Body:**
 
 ```
-| Session ID   | S03                                                     |
-| Participants | Console operator (x1) — 10 yrs exp, Site Bravo          |
-| User group   | Operators                                               |
+- **Session ID:** S03
+- **Participants:** Console operator (x1) — 10 yrs exp, Site Bravo
+- **User group:** Operators
 
 ---
 
@@ -964,9 +964,9 @@ Operator: "When I know command is on the line I'm slower. I'm choosing my words.
 - **Body:**
 
 ```
-| Session ID   | S04                                                     |
-| Participants | Console operator (x1) — 5 yrs exp, Site Alpha           |
-| User group   | Operators                                               |
+- **Session ID:** S04
+- **Participants:** Console operator (x1) — 5 yrs exp, Site Alpha
+- **User group:** Operators
 
 ---
 
@@ -999,9 +999,9 @@ Operator: "Three sensors weakly agreeing is harder to fake than one sensor stron
 - **Body:**
 
 ```
-| Session ID   | S05                                                     |
-| Participants | Console operator (x1) — 12 yrs exp, Site Bravo          |
-| User group   | Operators                                               |
+- **Session ID:** S05
+- **Participants:** Console operator (x1) — 12 yrs exp, Site Bravo
+- **User group:** Operators
 
 ---
 
@@ -1034,9 +1034,9 @@ Operator: "I have a notebook. Heli-pad 0600 return. Tree line at the southeast c
 - **Body:**
 
 ```
-| Session ID   | S06                                                     |
-| Participants | Console operator (x1) — 7 yrs exp, Site Alpha           |
-| User group   | Operators                                               |
+- **Session ID:** S06
+- **Participants:** Console operator (x1) — 7 yrs exp, Site Alpha
+- **User group:** Operators
 
 ---
 
@@ -1069,9 +1069,9 @@ Operator: "I'd trust three of them weakly agreeing more than one of them shoutin
 - **Body:**
 
 ```
-| Session ID   | S07                                                     |
-| Participants | Console operator (x1) — 9 yrs exp, Site Bravo           |
-| User group   | Operators                                               |
+- **Session ID:** S07
+- **Participants:** Console operator (x1) — 9 yrs exp, Site Bravo
+- **User group:** Operators
 
 ---
 
@@ -1104,9 +1104,9 @@ Operator: "I go to the camera every time. Every. Time."
 - **Body:**
 
 ```
-| Session ID   | S08                                                     |
-| Participants | Console operator (x1) — 11 yrs exp, Site Alpha          |
-| User group   | Operators                                               |
+- **Session ID:** S08
+- **Participants:** Console operator (x1) — 11 yrs exp, Site Alpha
+- **User group:** Operators
 
 ---
 
@@ -1143,9 +1143,9 @@ Operator: "Is the commander listening or not? My screen doesn't know."
 - **Body:**
 
 ```
-| Session ID   | S09                                                     |
-| Participants | Console operator (x1) — 4 yrs exp, Site Bravo           |
-| User group   | Operators                                               |
+- **Session ID:** S09
+- **Participants:** Console operator (x1) — 4 yrs exp, Site Bravo
+- **User group:** Operators
 
 ---
 
@@ -1180,9 +1180,9 @@ Operator: "When I reconstruct, I sound more certain than I was. The log is wrong
 - **Body:**
 
 ```
-| Session ID   | S10                                                     |
-| Participants | Console operator (x1) — 6 yrs exp, Site Alpha           |
-| User group   | Operators                                               |
+- **Session ID:** S10
+- **Participants:** Console operator (x1) — 6 yrs exp, Site Alpha
+- **User group:** Operators
 
 ---
 
@@ -1213,9 +1213,9 @@ Operator: "I trust three sensors weakly agreeing more than one shouting. The sho
 - **Body:**
 
 ```
-| Session ID   | S11                                                     |
-| Participants | Console operator (x1) — 9 yrs exp, Site Bravo           |
-| User group   | Operators                                               |
+- **Session ID:** S11
+- **Participants:** Console operator (x1) — 9 yrs exp, Site Bravo
+- **User group:** Operators
 
 ---
 
@@ -1250,9 +1250,9 @@ Operator: "I want to defend the decision later. Right now what I have is what I 
 - **Body:**
 
 ```
-| Session ID   | S12                                                     |
-| Participants | Console operator (x1) — 5 yrs exp, Site Alpha           |
-| User group   | Operators                                               |
+- **Session ID:** S12
+- **Participants:** Console operator (x1) — 5 yrs exp, Site Alpha
+- **User group:** Operators
 
 ---
 
@@ -1282,9 +1282,9 @@ Operator: "By the time the camera has slewed I've already opened two other thing
 - **Body:**
 
 ```
-| Session ID   | WT01                                                    |
-| Participants | Console operators (x3)                                  |
-| User group   | Operators                                               |
+- **Session ID:** WT01
+- **Participants:** Console operators (x3)
+- **User group:** Operators
 
 ---
 
@@ -1317,9 +1317,9 @@ Operator (4 yrs): "Maybe a free-text field, but after the decision, not before."
 - **Body:**
 
 ```
-| Session ID   | WT02                                                    |
-| Participants | Console operators (x4)                                  |
-| User group   | Operators                                               |
+- **Session ID:** WT02
+- **Participants:** Console operators (x4)
+- **User group:** Operators
 
 ---
 
@@ -1354,9 +1354,9 @@ Operator: "Full takeover is fine for the big calls. Don't take over my screen fo
 - **Body:**
 
 ```
-| Session ID   | WT03                                                    |
-| Participants | Console operators (x4)                                  |
-| User group   | Operators                                               |
+- **Session ID:** WT03
+- **Participants:** Console operators (x4)
+- **User group:** Operators
 
 ---
 
@@ -1392,9 +1392,9 @@ Operator: "Show me what the operator before me figured out. Don't make me re-fig
 - **Body:**
 
 ```
-| Session ID   | WT04                                                    |
-| Participants | Console operators (x4)                                  |
-| User group   | Operators                                               |
+- **Session ID:** WT04
+- **Participants:** Console operators (x4)
+- **User group:** Operators
 
 ---
 
@@ -1430,9 +1430,9 @@ Operator: "Either is better than what we have. Right now I just don't know."
 - **Body:**
 
 ```
-| Session ID   | Field Alpha 1                                           |
-| Participants | Researcher (x1, observing); Console operator (x1, observed) |
-| User group   | Operators                                               |
+- **Session ID:** Field Alpha 1
+- **Participants:** Researcher (x1, observing); Console operator (x1, observed)
+- **User group:** Operators
 
 ---
 
@@ -1469,9 +1469,9 @@ Operator (end of shift): "I'll do the logs now. From memory."
 - **Body:**
 
 ```
-| Session ID   | Field Alpha 2                                           |
-| Participants | Researcher (x1, observing); Console operator (x1, observed) |
-| User group   | Operators                                               |
+- **Session ID:** Field Alpha 2
+- **Participants:** Researcher (x1, observing); Console operator (x1, observed)
+- **User group:** Operators
 
 ---
 
@@ -1506,9 +1506,9 @@ Operator (end of shift, doing logs): "I'm guessing at what I was thinking three 
 - **Body:**
 
 ```
-| Session ID   | Field Bravo 1                                           |
-| Participants | Researcher (x1, observing); Console operator (x1, observed) |
-| User group   | Operators                                               |
+- **Session ID:** Field Bravo 1
+- **Participants:** Researcher (x1, observing); Console operator (x1, observed)
+- **User group:** Operators
 
 ---
 
@@ -1543,9 +1543,9 @@ Operator (mid-alert, post-radio): "Did she hear me. I'm going to call again."
 - **Body:**
 
 ```
-| Session ID   | Field Bravo 2                                           |
-| Participants | Researcher (x1, observing); Console operator (x1, observed) |
-| User group   | Operators                                               |
+- **Session ID:** Field Bravo 2
+- **Participants:** Researcher (x1, observing); Console operator (x1, observed)
+- **User group:** Operators
 
 ---
 

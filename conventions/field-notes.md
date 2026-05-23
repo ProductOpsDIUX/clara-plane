@@ -30,9 +30,9 @@ Each field note is a Confluence page filed under the appropriate `Field-notes ({
 
 ---
 
-| Session ID   | (assigned by CLARA — do not edit)                       |
-| Participants | e.g. Console operator (x2), Air-defence commander (x1)  |
-| User group   |                                                         |
+- **Session ID:** (assigned by CLARA — do not edit)
+- **Participants:** e.g. Console operator (x2), Air-defence commander (x1)
+- **User group:** 
 
 ---
 
