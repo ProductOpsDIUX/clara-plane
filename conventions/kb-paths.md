@@ -1,6 +1,6 @@
 # Knowledge Base path convention
 
-All Research artefacts file inside a programme's own Confluence space, under a single top-level page named **Knowledge Base**. The full template is:
+All research artefacts produced across the Research, Design, and Test phases of the ProductOps pipeline file inside a programme's own Confluence space, under a single top-level page named **Knowledge Base**. The full template is:
 
 ```
 Knowledge Base / {{track}} / <artefact-type> / <name>
@@ -8,9 +8,9 @@ Knowledge Base / {{track}} / <artefact-type> / <name>
 
 ## Segments
 
-- **`Knowledge Base`** — literal page name. The top-level container for all Research artefacts in a programme's space. One per space.
+- **`Knowledge Base`** — literal page name. The top-level container for all research artefacts produced across the Research, Design, and Test phases in a programme's space. One per space.
 - **`{{track}}`** — the track this artefact belongs to. Tracks vary by programme — workstream, capability area, feature line, sub-system, or any other meaningful slice. If the artefact spans tracks, the literal track name is **`Programme-wide`**.
-- **`<artefact-type>`** — the artefact category (e.g. `Personas`, `Journeys`, `Research-synthesis`, `Prior-knowledge`, `PRDs`, `Interview-guides`, `Field-notes`). The artefact brief tells you which value to use.
+- **`<artefact-type>`** — the artefact category (e.g. `Personas`, `Journeys`, `Research-synthesis`, `Prior-knowledge`, `PRDs`, `Interview-guides`, `Capability-storyboards`, `Test-plans`, `Field-notes`). The artefact brief tells you which value to use.
 - **`<name>`** — the specific artefact, e.g. a persona name, a journey scope, a topic slug.
 
 ## Examples

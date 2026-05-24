@@ -1,17 +1,16 @@
-"use client";
-
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heading } from "@/components/ui/heading";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Text } from "@/components/ui/text";
-import { type Artefact, type Phase, artefacts, phases } from "@/content/artefacts";
-
-const phaseOrder: Phase[] = ["discover", "synthesise", "define"];
+import { type Artefact, artefacts, phases } from "@/content/artefacts";
 
 function ArtefactCard({ artefact }: { artefact: Artefact }) {
   return (
-    <Card className="flex flex-col h-full">
-      <CardHeader className="pb-3">
+    <Card className="flex flex-col snap-start">
+      <CardHeader className="pb-3 space-y-2">
+        <Badge variant="outline" className="self-start text-xs">
+          {phases[artefact.phase].label}
+        </Badge>
         <CardTitle className="text-base">{artefact.title}</CardTitle>
       </CardHeader>
       <CardContent className="flex-1 flex flex-col gap-4">
@@ -45,47 +44,25 @@ export function ArtefactCatalogue() {
             What CLARA drafts
           </Text>
           <Heading as="h2" size="3xl" className="text-balance">
-            Ten artefacts. Three phases of work.
+            Twelve artefacts. Three phases of work.
           </Heading>
           <Text size="md" variant="muted" className="leading-relaxed">
-            CLARA&rsquo;s catalogue covers Research from initial discovery through
-            product definition. Each artefact files to a predictable path and feeds
-            the next.
+            CLARA&rsquo;s catalogue spans Research, Design, and Test &mdash; from
+            initial discovery through product definition, storyboards, and test
+            plans. Each artefact files to a predictable path and feeds the next.
           </Text>
         </div>
 
-        <Tabs defaultValue="discover" className="mt-10">
-          <TabsList className="h-auto p-1">
-            {phaseOrder.map((p) => (
-              <TabsTrigger key={p} value={p} className="px-4 py-1.5">
-                {phases[p].label}
-                <span className="ml-2 text-xs text-fg-subtle">
-                  {artefacts.filter((a) => a.phase === p).length}
-                </span>
-              </TabsTrigger>
+        <div
+          className="mt-10 -mx-6 sm:-mx-8 overflow-x-auto snap-x snap-mandatory scroll-px-6 sm:scroll-px-8"
+          aria-label="Artefact catalogue"
+        >
+          <div className="grid grid-flow-col auto-cols-[18rem] gap-4 md:gap-6 px-6 sm:px-8 pb-2">
+            {artefacts.map((a) => (
+              <ArtefactCard key={a.slug} artefact={a} />
             ))}
-          </TabsList>
-
-          {phaseOrder.map((p) => {
-            const items = artefacts.filter((a) => a.phase === p);
-            return (
-              <TabsContent key={p} value={p} className="mt-8">
-                <Text
-                  size="sm"
-                  variant="muted"
-                  className="mb-6 max-w-2xl leading-relaxed"
-                >
-                  {phases[p].description}
-                </Text>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                  {items.map((a) => (
-                    <ArtefactCard key={a.slug} artefact={a} />
-                  ))}
-                </div>
-              </TabsContent>
-            );
-          })}
-        </Tabs>
+          </div>
+        </div>
       </div>
     </section>
   );

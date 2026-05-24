@@ -84,6 +84,6 @@ If the scenario doesn't justify a requirement, leave it out and flag under Open 
 
 # tips
 
-- The traceability column ("traces to scenario beat: X") is the part that protects the spec from drift. Requirements that can't be traced back to a specific scenario beat should be challenged.
-- Performance thresholds are where engineering programmes most often under-specify. "Fast enough" is not a requirement; "within 5 seconds, 95th percentile" is.
-- Pair with a [Napkin AI](/tools/napkin-ai) system diagram so the requirements have a structural picture to anchor against.
+- When you review CLARA's spec, every requirement should trace back to a specific scenario beat. Challenge any that can't — that's where drift creeps in.
+- Performance thresholds are where CLARA's draft will be vaguest unless your operational scenario contains hard numbers. Push for measurable thresholds ("within 5 seconds, 95th percentile") rather than "fast enough".
+- Pair CLARA's output with a [Napkin AI](/tools/napkin-ai) system diagram so the requirements have a structural picture to anchor against.

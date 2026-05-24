@@ -16,8 +16,9 @@ export function Footer() {
             </Text>
             <Text size="sm" variant="muted" className="leading-relaxed">
               Confluence Learning &amp; AI Research Assistant. An internal
-              ProductOps tool for DSTA programme teams &mdash; cited Research
-              artefacts, drafted from the knowledge base they already own.
+              ProductOps tool for DSTA programme teams &mdash; cited research
+              artefacts across Research, Design, and Test phases, drafted from
+              the knowledge base they already own.
             </Text>
           </div>
 

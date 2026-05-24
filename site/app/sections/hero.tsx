@@ -24,9 +24,10 @@ export function Hero() {
 
           <Text size="lg" variant="muted" className="text-balance max-w-2xl leading-relaxed">
             CLARA reads your programme&rsquo;s Confluence knowledge base, turns raw
-            field notes into evidence-backed insights, and files them as Research
-            artefacts &mdash; personas, journeys, PRDs &mdash; cited to source,
-            never fabricated.
+            field notes into evidence-backed insights, and files them as research
+            artefacts across the Research, Design, and Test phases of the
+            ProductOps pipeline &mdash; personas, journeys, PRDs, storyboards,
+            test plans &mdash; cited to source, never fabricated.
           </Text>
 
           <div className="flex flex-wrap gap-2 pt-2">

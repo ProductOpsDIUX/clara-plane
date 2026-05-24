@@ -2,18 +2,21 @@
 
 **Confluence Learning & AI Research Assistant** — an internal ProductOps tool that turns Confluence documentation chaos into product clarity through automated synthesis and artefact generation.
 
-CLARA is **Research-only** and **Confluence-only**. She reads, traverses, and queries a programme's Confluence knowledge base via MCP, drafts Research artefacts (personas, journeys, synthesis pages, PRDs), and files them back into the knowledge base under a disciplined hierarchy. She refuses to fabricate, cites source pages, and stops loudly when filing constraints aren't met rather than silently falling back.
+CLARA is **Confluence-only**. She reads, traverses, and queries a programme's Confluence knowledge base via MCP, drafts research artefacts (personas, journeys, synthesis pages, PRDs, capability storyboards, test plans, and the rest) across the Research, Design, and Test phases of the ProductOps pipeline, and files them back into the knowledge base under a disciplined hierarchy. She refuses to fabricate, cites source pages, and stops loudly when filing constraints aren't met rather than silently falling back. Prototype scaffolding is out of scope — that's Claude Code's job.
 
 ## Repository layout
 
 ```
 persona.md             CLARA's voice, behaviour, refusal patterns
 conventions/           shared rules (MCP discipline, KB paths, cascade, context)
-artefacts/             per-artefact briefs (10 of them)
+artefacts/             per-artefact briefs (12 of them — Research, Design, Test)
 demo-kb/               SKYPROTECT demo knowledge base — test data for CLARA
+site/                  CLARA's brand/marketing site
 build/build.ts         assembles modular sources into dist/
 dist/                  generated outputs — do not hand-edit
-  prompts/             per-artefact MDX, portal-ready
+  portal/              per-artefact MDX, portal-ready
+  SKILL.md             vendor-neutral LLM skill bundle
+  system-prompt.md     flat system prompt for hosts without skill protocol
 ```
 
 ## How CLARA is authored

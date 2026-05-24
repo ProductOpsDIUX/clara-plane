@@ -76,6 +76,6 @@ If the scenario doesn't cover a step, leave it blank and flag under "Open questi
 
 # tips
 
-- The hardest part is keeping the thread at the right grain. Too coarse and you miss decision points; too fine and you're documenting screens. Aim for 5 to 12 steps end-to-end.
-- The "failure mode + recovery" column is where capability investment usually pays off — the steps with the most expensive recovery paths are the ones most worth protecting.
-- Pair with a [Napkin AI](/tools/napkin-ai) diagram so the data flow is visible at a glance.
+- When you review CLARA's thread, aim for 5 to 12 steps end-to-end. Too coarse misses decision points; too fine documents screens. Push back if she lands outside that range.
+- Look at the "failure mode + recovery" column first — the steps with the most expensive recovery paths are usually where capability investment pays off.
+- Pair CLARA's output with a [Napkin AI](/tools/napkin-ai) diagram so the data flow is visible at a glance.

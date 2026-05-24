@@ -1,6 +1,6 @@
 # Track ↔ Programme-wide cascade
 
-Every Research artefact lives at one of two scopes:
+Every artefact in the Knowledge Base lives at one of two scopes:
 
 - **Programme-wide** — umbrella artefacts that apply across all tracks in a programme. Filed under `Knowledge Base/Programme-wide/`.
 - **Track-level** — artefacts specific to a single track within the programme. Filed under `Knowledge Base/{{track}}/`.

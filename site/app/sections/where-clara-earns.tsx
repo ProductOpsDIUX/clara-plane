@@ -119,8 +119,10 @@ export function WhereClaraEarns() {
           </Heading>
           <Text size="md" variant="muted" className="leading-relaxed">
             CLARA isn&rsquo;t a chatbot. She&rsquo;s your AI research assistant. She
-            replaces the slow, error-prone parts of Research &mdash; and chains the
-            outputs so your evidence stays intact from transcript to PRD.
+            replaces the slow, error-prone parts of producing research artefacts
+            across Research, Design, and Test phases of the ProductOps pipeline
+            &mdash; and chains the outputs so your evidence stays intact from
+            transcript to test plan.
           </Text>
         </div>
 

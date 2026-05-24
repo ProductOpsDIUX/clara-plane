@@ -26,15 +26,29 @@ CLARA provides two flows for provisioning the Knowledge Base structure in Conflu
 
 ### Artefact-type vocabulary
 
-The following artefact-type folders are created at every level (Programme-wide and each track) at setup time. The set is fixed — it does not vary by programme type or track:
+The artefact-type folders created at every level (Programme-wide and each track) depend on the programme type CLARA captured in step 2. Shared types are always created; the domain-specific sets are added on top.
+
+**Shared (every programme):**
 
 - `Personas`
 - `Journeys`
 - `Research-synthesis`
 - `Prior-knowledge`
-- `PRDs`
 - `Interview-guides`
 - `Field-notes`
+- `Test-plans`
+
+**Digital programmes additionally get:**
+
+- `PRDs`
+- `Service-blueprints`
+
+**Engineering programmes additionally get:**
+
+- `Capability-specs`
+- `Mission-threads`
+- `Operational-scenarios`
+- `Capability-storyboards`
 
 `Research-synthesis` is created as a leaf placeholder page per track (not a folder with children), as each track produces one synthesis document. All other types are folder placeholders containing leaf artefact pages.
 
@@ -54,9 +68,9 @@ Used when new tracks are added to a programme mid-programme. Does not require re
 
 ### Flow
 
-1. **Space and KB check** — CLARA verifies the programme space and `Knowledge Base` page exist. If not, CLARA stops and asks the user to run setup-kb first.
+1. **Space and KB check** — CLARA verifies the programme space and `Knowledge Base` page exist. If not, CLARA stops and asks the user to run setup-kb first. CLARA reads `Programme type: Digital` or `Programme type: Engineering` from the KB page body to determine which artefact-type vocabulary to use; if the line is missing or malformed, CLARA stops and asks the user to confirm the programme type before proceeding.
 2. **Confirm track name** — CLARA repeats the track name back and confirms before creating anything.
-3. **Create** — CLARA creates the track folder and all artefact-type folders under it (same vocabulary as setup-kb), including `Field-notes ({{track}})` and `_Template — Field note ({{track}})`.
+3. **Create** — CLARA creates the track folder and all artefact-type folders under it (same vocabulary as setup-kb, gated by the programme type from step 1), including `Field-notes ({{track}})` and `_Template — Field note ({{track}})`.
 4. **Report** — pages created, track folder URL, any failures verbatim.
 
 ---

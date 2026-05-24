@@ -55,4 +55,4 @@ Output as markdown with these sections:
 - Be specific with the topic. Broader queries return mush.
 - If the response is shallow, follow up with: "Go deeper on the recurring patterns — what specifically were the failure modes?"
 - Treat citations as the deliverable. If a finding has no citation, treat it as a hypothesis, not a fact.
-- In MCP mode, confirm the source list before generating. The LLM picking the wrong pages is the failure mode most worth catching upfront.
+- Confirm CLARA's source list before she generates the summary. Wrong pages picked up here cascade into every downstream artefact — catch it upfront.

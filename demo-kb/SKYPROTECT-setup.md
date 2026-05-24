@@ -31,6 +31,7 @@ SKYPROTECT (space)
     │   │   └── Counter-drone-systems
     │   ├── PRDs (Programme-wide)/
     │   ├── Interview-guides (Programme-wide)/
+    │   ├── Test-plans (Programme-wide)/
     │   └── Field-notes (Programme-wide)/
     │       ├── _Template — Field note (Programme-wide)
     │       ├── S13 — Air-defence commander interview
@@ -47,6 +48,8 @@ SKYPROTECT (space)
         ├── PRDs (Operator-console)/
         │   └── Console-v1
         ├── Interview-guides (Operator-console)/
+        ├── Test-plans (Operator-console)/
+        │   └── Console-v1-usability-test
         └── Field-notes (Operator-console)/
             ├── _Template — Field note (Operator-console)
             ├── S01 — Console operator interview
@@ -1570,6 +1573,129 @@ Off-going operator: "Yeah, that's a thing. Wet weather."
 Operator (later, mid-alert): "Wait, is this the SE corner thing? I think this is the SE corner thing."
 
 Operator (end of shift): "Three weeks here and I'm still figuring out what's a real alert at this site."
+```
+
+---
+
+### Page 49 — `Test-plans (Programme-wide)` (folder placeholder under Programme-wide)
+
+- **Path:** `Programme-wide > Test-plans (Programme-wide)`
+- **Title:** `Test-plans (Programme-wide)`
+- **Labels:** none
+- **Body:** `Placeholder — created to support filing structure.`
+
+---
+
+### Page 50 — `Test-plans (Operator-console)` (folder placeholder under Operator-console)
+
+- **Path:** `Operator-console > Test-plans (Operator-console)`
+- **Title:** `Test-plans (Operator-console)`
+- **Labels:** none
+- **Body:** `Placeholder — created to support filing structure.`
+
+---
+
+### Page 51 — `Console-v1-usability-test` (test plan)
+
+- **Path:** `Operator-console > Test-plans (Operator-console) > Console-v1-usability-test`
+- **Title:** `Console-v1-usability-test`
+- **Labels:** `test`, `artefact`, `test-plan`
+- **Body:**
+
+```
+# Test plan: Console v1 — operator usability test
+
+### Objective
+
+Determine whether console operators can complete an alert-to-engagement-decision workflow on the Console v1 prototype within the success-criteria thresholds, without context-switching off-screen.
+
+### Success criteria tested
+
+- Median alert-to-engagement-decision under 90 seconds for high-confidence threats — covered by scenarios 1, 2, 4
+- 100% of decisions logged in-flight from current console state — covered by scenarios 1, 2, 3, 4
+- ≥90% of alerts handled on one screen without leaving the console — covered by all scenarios
+- Reconciliation view used in ≥60% of contradicting-sensor alerts — covered by scenarios 2, 3
+
+### Scenarios
+
+#### Scenario 1: High-confidence single-sensor alert
+
+- **Setup:** Operator is mid-shift at Site Alpha. Console shows quiet baseline. A high-confidence radar-only alert fires for an inbound airborne contact.
+- **Steps:**
+  1. Operator notices the alert.
+  2. Operator inspects the fused-confidence assessment and supporting sensor feed.
+  3. Operator commits to an engagement decision via the in-flight logging control.
+- **Expected:** Decision logged from current console state in under 90 seconds from alert. No tab switches. No paper notes.
+- **Evidence to capture:** Time-to-decision (console telemetry), tab-switch count, observer notes on hesitation points, post-task DASH prototype-survey scores.
+- **Maps to:** Median time, in-flight logging, single-screen handling.
+
+#### Scenario 2: Contradicting-sensor alert (reconciliation view)
+
+- **Setup:** Operator is mid-shift. Radar and RF agree on a track; EO/IR shows nothing at the cued location. Sensor disagreement exceeds the reconciliation threshold.
+- **Steps:**
+  1. Operator notices the alert and the reconciliation indicator.
+  2. Operator opens the reconciliation view.
+  3. Operator inspects each sensor's basis and decides which to trust.
+  4. Operator commits to an engagement decision (engage or dismiss).
+- **Expected:** Operator uses the reconciliation view rather than reverting to off-screen tools or voice-channel querying. Decision logged in under 120 seconds.
+- **Evidence to capture:** Reconciliation-view open/close events, sensor selected as basis, time-to-decision, observer notes on whether the basis was clear.
+- **Maps to:** Reconciliation-view usage, in-flight logging, single-screen handling.
+
+#### Scenario 3: Start-of-shift at an unfamiliar site
+
+- **Setup:** Operator begins a shift at Site Bravo (they normally work Site Alpha). Console surfaces previously-noted false-positive context for Site Bravo at sign-in.
+- **Steps:**
+  1. Operator reviews the surfaced site context.
+  2. A known-false-positive-shaped alert fires within the first 10 minutes.
+  3. Operator processes the alert.
+- **Expected:** Operator references the surfaced context (verbal or observable) and correctly classifies the alert as a likely false positive within the median-time threshold.
+- **Evidence to capture:** Whether operator references site context, classification correctness, time-to-decision, post-task debrief on whether the context surfacing was useful or noise.
+- **Maps to:** Single-screen handling, median time, site-context surfacing (open question — see PRD §7).
+
+#### Scenario 4: Commander acknowledgement awaited
+
+- **Setup:** Operator commits to an engagement decision that requires commander acknowledgement. Acknowledgement is delayed by 60 seconds (simulated).
+- **Steps:**
+  1. Operator commits the decision.
+  2. Operator continues monitoring while awaiting acknowledgement state to update inline.
+  3. Acknowledgement arrives; operator proceeds.
+- **Expected:** Operator does not initiate voice-channel chase before the inline state update arrives. Decision and acknowledgement both logged from console state.
+- **Evidence to capture:** Whether operator attempted off-channel chase, observer notes on confidence in the inline state, time spent staring at the acknowledgement indicator.
+- **Maps to:** Single-screen handling, in-flight logging.
+
+### Participants
+
+- **Number:** 5
+- **Profile:** Console operators with at least 3 months on the current three-vendor toolchain. Mix of Site Alpha and Site Bravo primary postings.
+- **Recruiting source:** Through the SKYPROTECT field-research liaison; same pool as the session interviews (S01–S12).
+- **Exclusions:** Operators who participated in walk-throughs WT01–WT04 (already exposed to design intent — would skew freshness signal).
+
+### Session structure
+
+- **Pre-task (10 min):** Welcome, consent, brief on what's being tested (Console v1 prototype, not the current toolchain), warm-up question on a recent shift.
+- **Scenarios:** 1 → 2 → 3 → 4, in order. 10–15 min per scenario including think-aloud. Total 50 min.
+- **Post-task (15 min):** Debrief questions, DASH 2.0 prototype survey.
+- **Total duration:** 75 minutes.
+
+### Measurement
+
+- **Behavioural observations:** Time-to-decision, tab-switch count, reconciliation-view usage, where the operator looks during hesitation, whether they reach for off-screen tools, observable confusion at decision-commit.
+- **Metrics:** Console telemetry — alert-to-decision-commit duration, reconciliation-view open/close, in-flight logging completion, acknowledgement-state dwell time.
+- **DASH 2.0 survey:** Prototype survey (post-iteration). Console v1 is still pre-deployment, so the system survey is not yet applicable.
+- **Open questions:** "Did the console give you everything you needed on one screen?" "When did you most want to look elsewhere?" "Was the reconciliation view clear about *why* sensors disagreed?" "Did the site-specific context at start-of-shift help, get in the way, or neither?"
+
+### Analysis
+
+- Raw observations consolidated within 48 hours of the last session. DASH prototype-survey scores reviewed alongside observer notes.
+- Findings flow directly into the next Console v1 design iteration (next prototype-from-PRD pass). No separate synthesis artefact — adjustments captured in PRD changelog and the next prototype.
+- Reviewer: Operator-console track lead plus the prototype author.
+
+### Validity risks
+
+- **Prototype lacks site-realistic alert content:** alerts in the prototype may not feel ambiguous in the way real shifts do. Mitigation: seed each scenario from anonymised field-note alerts (see Field Alpha / Field Bravo notes).
+- **Observer presence changes hesitation behaviour:** operators may suppress think-aloud or pause-points. Mitigation: brief observers to remain silent until debrief; if feasible, capture screen + audio and review async.
+- **Participant pool is small (5):** behavioural patterns will be indicative, not statistically conclusive. Mitigation: triangulate against DASH prototype survey and the existing walk-through findings (WT01–WT04).
+- **Site Bravo unfamiliarity (scenario 3) may swamp the site-context signal:** operators new to Site Bravo will struggle regardless of whether the surfaced context helps. Mitigation: include at least 2 Site-Bravo-primary operators so we can compare.
 ```
 
 ---

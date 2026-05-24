@@ -32,6 +32,7 @@ declare -a PAGES=(
   "Console-operator|research artefact persona"
   "Engage-incoming-threat|research artefact journey-map"
   "Console-v1|research artefact prd"
+  "Console-v1-usability-test|test artefact test-plan"
 )
 
 # Note: Research-synthesis exists twice (Programme-wide + Operator-console). The

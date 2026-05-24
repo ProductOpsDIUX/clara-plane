@@ -66,8 +66,8 @@ Output as markdown with one `##` heading per section.
 
 # tips
 
-- The clarifying questions in Step 3 are where this prompt earns its keep. Answer them honestly even if it means "I don't know yet."
-- Treat the v0 PRD as a starting position, never as the final document. Manual editing after generation is the norm, not the exception.
+- CLARA asks clarifying questions when inputs are thin. Answer honestly even if it's "I don't know yet" — the Open questions section preserves the unknown.
+- Treat CLARA's v0 PRD as a starting position, not a final document. Manual editing after generation is the norm, not the exception.
 
 ## Before you circulate — self-review checklist
 
