@@ -254,6 +254,8 @@ function assembleFullDistribution(opts: {
   kbPathsMd: string;
   cascadeMd: string;
   confluenceMcpMd: string;
+  setupKbMd: string;
+  fieldNotesMd: string;
   artefacts: ArtefactSource[];
   contextRule: string;
   cascadeRule: string;
@@ -265,6 +267,8 @@ function assembleFullDistribution(opts: {
     kbPathsMd,
     cascadeMd,
     confluenceMcpMd,
+    setupKbMd,
+    fieldNotesMd,
     artefacts,
     contextRule,
     cascadeRule,
@@ -311,6 +315,8 @@ function assembleFullDistribution(opts: {
     convention('Knowledge Base path convention', kbPathsMd),
     convention('Track ↔ Programme-wide cascade', cascadeMd),
     convention('Confluence MCP filing discipline', confluenceMcpMd),
+    convention('KB setup flows (setup-kb, add-track)', setupKbMd),
+    convention('Field notes', fieldNotesMd),
     '## Artefact catalogue',
     '',
     'When the user asks for a Research artefact, identify which one applies and follow the corresponding brief. Always confirm `{{programme}}` and `{{track}}` before drafting.',
@@ -365,6 +371,8 @@ async function main() {
   const kbPathsMd = await readFile('conventions/kb-paths.md');
   const cascadeMd = await readFile('conventions/cascade.md');
   const confluenceMcpMd = await readFile('conventions/confluence-mcp.md');
+  const setupKbMd = await readFile('conventions/setup-kb.md');
+  const fieldNotesMd = await readFile('conventions/field-notes.md');
 
   const contextRule = stripWhyItMatters(stripH1(contextMd));
   const cascadeRule = stripWhyItMatters(stripH1(cascadeMd));
@@ -410,6 +418,8 @@ async function main() {
     kbPathsMd,
     cascadeMd,
     confluenceMcpMd,
+    setupKbMd,
+    fieldNotesMd,
     artefacts,
     contextRule,
     cascadeRule,

@@ -26,29 +26,35 @@ CLARA provides two flows for provisioning the Knowledge Base structure in Conflu
 
 ### Artefact-type vocabulary
 
-The artefact-type folders created at every level (Programme-wide and each track) depend on the programme type CLARA captured in step 2. Shared types are always created; the domain-specific sets are added on top.
+The artefact-type folders created at every level (Programme-wide and each track) depend on the programme type CLARA captured in step 2. The list is ordered to match the ProductOps pipeline (Research → Design → Test) and the dependency chain within each phase, so the previewed hierarchy reads as a natural workflow. Folders are created in this order.
 
-**Shared (every programme):**
+**Research phase — shared (every programme):**
 
-- `Personas`
-- `Journeys`
-- `Research-synthesis`
-- `Prior-knowledge`
-- `Interview-guides`
-- `Field-notes`
-- `Test-plans`
+1. `Prior-knowledge`
+2. `Interview-guides`
+3. `Field-notes`
+4. `Research-synthesis`
+5. `Personas`
+6. `Journeys`
 
-**Digital programmes additionally get:**
+**Research phase — digital programmes additionally get:**
 
-- `PRDs`
-- `Service-blueprints`
+7. `Service-blueprints`
+8. `PRDs`
 
-**Engineering programmes additionally get:**
+**Research phase — engineering programmes additionally get:**
 
-- `Capability-specs`
-- `Mission-threads`
-- `Operational-scenarios`
-- `Capability-storyboards`
+7. `Operational-scenarios`
+8. `Capability-specs`
+9. `Mission-threads`
+
+**Design phase — engineering programmes only:**
+
+10. `Capability-storyboards`
+
+**Test phase — shared (every programme):**
+
+- `Test-plans` (always last)
 
 `Research-synthesis` is created as a leaf placeholder page per track (not a folder with children), as each track produces one synthesis document. All other types are folder placeholders containing leaf artefact pages.
 

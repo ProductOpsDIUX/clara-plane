@@ -22,15 +22,16 @@ confluenceContext:
         Page under `Knowledge Base/{{track}}/Capability-specs/*` or `Knowledge
         Base/Programme-wide/Capability-specs/*`. Anchors the storyboard to the
         actual requirements.
-    - what: Persona consuming the storyboard (optional)
+    - what: Persona depicted in the storyboard (optional)
       description: >-
         Page under `Knowledge Base/{{track}}/Personas/*` or `Knowledge
-        Base/Programme-wide/Personas/*`. Useful when the audience is operators
-        reviewing the capability for the first time.
+        Base/Programme-wide/Personas/*`. The operator whose actions the
+        storyboard shows — anchors the protagonist's vocabulary, context, and
+        constraints.
   outputPathTemplate: 'Knowledge Base/{{track}}/Capability-storyboards/{{storyboard-title}}'
 visibility: public
 source: clara
-claraSourceSha: 44cbd0653704d62cadc6ed294f64cdc04f0de7f6
+claraSourceSha: 875f6d44d91f059d9155e9f8f41ca60be613a3be
 copyBlock: Use CLARA's `capability-storyboard-scripter` for <programme name>.
 ---
 
@@ -40,8 +41,8 @@ copyBlock: Use CLARA's `capability-storyboard-scripter` for <programme name>.
 - **Track** — the slice of the programme this artefact belongs to (workstream, capability area, feature line, etc.), or `Programme-wide` if it spans tracks.
 - **Storyboard title** — short (e.g. "Tank-crew alerting under degraded comms").
 - **Length** — number of panels. Typically 8–12; shorter (5–6) for a quick brief or longer (15+) for a full narrative.
-- **Audience** — who the storyboard is for. Examples: operators reviewing the capability for the first time, an acquisition gate going to leadership, or the engineering team scoping the build.
-- **Inputs** — CLARA will search the programme's Confluence space for operational scenario this storyboard depicts; capability spec for the capability being shown (optional); persona consuming the storyboard (optional). You can also paste fresh material if it's not in Confluence yet.
+- **Audience** — who the storyboard is for. Examples: operators reviewing the capability for the first time, or the engineering team scoping the build.
+- **Inputs** — CLARA will search the programme's Confluence space for operational scenario this storyboard depicts; capability spec for the capability being shown (optional); persona depicted in the storyboard (optional). You can also paste fresh material if it's not in Confluence yet.
 
 ## Where the output lands
 

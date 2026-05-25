@@ -12,8 +12,8 @@ inputsFrom:
   - research-synthesiser
 confluenceContext:
   inputs:
-    - what: "Artefact being tested"
-      description: "For digital tests: a PRD under `Knowledge Base/{{track}}/PRDs/*` (or programme-wide). For engineering tests: the pair of `Knowledge Base/{{track}}/Operational-scenarios/*` + `Knowledge Base/{{track}}/Capability-specs/*`. Ask the user which artefact (or pair) the test is for."
+    - what: "Relevant artefacts"
+      description: "The artefact being tested. For digital tests: a PRD under `Knowledge Base/{{track}}/PRDs/*` (or programme-wide). For engineering tests: the pair of `Knowledge Base/{{track}}/Operational-scenarios/*` + `Knowledge Base/{{track}}/Capability-specs/*`. Ask the user which artefact (or pair) the test is for."
     - what: "Success criteria"
       description: "Success-criteria section of `Knowledge Base/{{track}}/Research-synthesis` (fall back to `Knowledge Base/Programme-wide/Research-synthesis`). These are what the scenarios must exercise."
     - what: "Field notes for scenario seeding (optional)"
@@ -31,7 +31,7 @@ Use this prompt to draft a complete test plan — including scenarios — in one
 
 - **Test type** — what kind of test this is. Examples: usability test on interactive prototype, moderated walk-through of a clickable prototype with operators, instrumented A/B on a deployed feature, capability rehearsal in scripted exercise.
 - **Test name** — short (e.g. "Console-v1-usability-test", "Tank-crew-alerting-rehearsal"). Becomes `{{test-name}}`.
-- **Test focus (optional)** — which slice of the artefact this round is exercising. Plain text: a user-story reference, one or two success criteria, the features shipping this PI, the capability beats being rehearsed, or leave blank to cover all success criteria.
+- **Test focus (optional)** — describe what this round of testing should cover. Leave blank to test against all the artefact's success criteria. Otherwise narrow the scope: a specific user story (e.g. "submit-incident-report"), one or two success criteria, the features shipping in this PI, or the storyboard beats being rehearsed.
 - **Constraints (optional)** — time budget, recruiting limits, environment, classification, secrecy.
 
 # inputs
@@ -51,7 +51,7 @@ A good test plan:
 - Derives 3–6 scenarios that, together, exercise the success criteria. Each scenario has setup, steps, expected result, and evidence to capture.
 - Names the participants: how many, what type, recruiting source, exclusion criteria.
 - Structures the session: pre-task, scenarios, post-task, total duration.
-- Names what gets measured: behavioural observations, metrics, post-session questions, planned DASH 2.0 survey type (prototype survey or system survey).
+- Names what gets measured: behavioural observations, metrics, post-session questions, planned DASH survey type (prototype survey or system survey).
 - Names how findings will translate into design adjustments.
 - Lists what could invalidate the test (and the mitigations).
 
@@ -94,7 +94,7 @@ Output as markdown:
 ### Measurement
 - **Behavioural observations:** [task completion, hesitation, errors, recovery, where they look for help]
 - **Metrics:** [if instrumented — what to log]
-- **DASH 2.0 survey:** [prototype survey (post-iteration) OR system survey (post-deployment) — name which and why]
+- **DASH survey:** [prototype survey (post-iteration) OR system survey (post-deployment) — name which and why]
 - **Open questions:** [what to ask in the debrief]
 
 ### Analysis
@@ -118,7 +118,4 @@ Rules:
 # tips
 
 - The Objective sentence is the test of the test plan. CLARA proposes it before drafting the rest and waits for your confirmation — if she can't compress it to one line, treat that as a signal to narrow the test focus and rerun.
-- When you review CLARA's scenarios, each should map to a success criterion. If a scenario can't fail, it isn't a test — push back.
-- CLARA can propose structural validity risks (recruiting bias, prototype fidelity, observer effects, environmental coupling). Local risks — team politics, recruiting blockers in this programme, recent incidents — only you can add.
-- DASH 2.0 has two surveys: the prototype survey runs immediately after the session (for not-yet-deployed artefacts); the system survey runs after sufficient exposure (for deployed features). The test plan should name which applies — the choice determines when the survey runs.
-- No separate synthesis prompt for test data. Captures live in DASH 2.0; design adjustments land in your next prototype iteration.
+- When you review CLARA's scenarios, each should map to a success criterion. If a scenario can't fail, it isn't a test — ask CLARA to rework it.

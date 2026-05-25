@@ -23,55 +23,55 @@ Everything sits inside the `SKYPROTECT` space, under a single top-level page nam
 SKYPROTECT (space)
 └── Knowledge Base/
     ├── Programme-wide/
+    │   ├── Prior-knowledge (Programme-wide)/
+    │   │   └── Counter-drone-systems
+    │   ├── Interview-guides (Programme-wide)/
+    │   ├── Field-notes (Programme-wide)/
+    │   │   ├── _Template — Field note (Programme-wide)
+    │   │   ├── S13 — Air-defence commander interview
+    │   │   ├── S14 — Air-defence commander interview
+    │   │   ├── S15 — Air-defence commander interview
+    │   │   └── S16 — Air-defence commander interview
+    │   ├── Research-synthesis (Programme-wide)
     │   ├── Personas (Programme-wide)/
     │   │   └── Air-defence-commander
     │   ├── Journeys (Programme-wide)/
-    │   ├── Research-synthesis (Programme-wide)
-    │   ├── Prior-knowledge (Programme-wide)/
-    │   │   └── Counter-drone-systems
     │   ├── PRDs (Programme-wide)/
-    │   ├── Interview-guides (Programme-wide)/
-    │   ├── Test-plans (Programme-wide)/
-    │   └── Field-notes (Programme-wide)/
-    │       ├── _Template — Field note (Programme-wide)
-    │       ├── S13 — Air-defence commander interview
-    │       ├── S14 — Air-defence commander interview
-    │       ├── S15 — Air-defence commander interview
-    │       └── S16 — Air-defence commander interview
+    │   └── Test-plans (Programme-wide)/
     └── Operator-console/
+        ├── Prior-knowledge (Operator-console)/
+        ├── Interview-guides (Operator-console)/
+        ├── Field-notes (Operator-console)/
+        │   ├── _Template — Field note (Operator-console)
+        │   ├── S01 — Console operator interview
+        │   ├── S02 — Console operator interview
+        │   ├── S03 — Console operator interview
+        │   ├── S04 — Console operator interview
+        │   ├── S05 — Console operator interview
+        │   ├── S06 — Console operator interview
+        │   ├── S07 — Console operator interview
+        │   ├── S08 — Console operator interview
+        │   ├── S09 — Console operator interview
+        │   ├── S10 — Console operator interview
+        │   ├── S11 — Console operator interview
+        │   ├── S12 — Console operator interview
+        │   ├── WT01 — Console paper-prototype walk-through
+        │   ├── WT02 — Reconciliation view walk-through
+        │   ├── WT03 — Site-context surfacing walk-through
+        │   ├── WT04 — Commander acknowledgement walk-through
+        │   ├── Field Alpha 1 — Site Alpha day shift
+        │   ├── Field Alpha 2 — Site Alpha night shift
+        │   ├── Field Bravo 1 — Site Bravo day shift
+        │   └── Field Bravo 2 — Site Bravo night shift
+        ├── Research-synthesis (Operator-console)
         ├── Personas (Operator-console)/
         │   └── Console-operator
         ├── Journeys (Operator-console)/
         │   └── Engage-incoming-threat
-        ├── Research-synthesis (Operator-console)
-        ├── Prior-knowledge (Operator-console)/
         ├── PRDs (Operator-console)/
         │   └── Console-v1
-        ├── Interview-guides (Operator-console)/
-        ├── Test-plans (Operator-console)/
-        │   └── Console-v1-usability-test
-        └── Field-notes (Operator-console)/
-            ├── _Template — Field note (Operator-console)
-            ├── S01 — Console operator interview
-            ├── S02 — Console operator interview
-            ├── S03 — Console operator interview
-            ├── S04 — Console operator interview
-            ├── S05 — Console operator interview
-            ├── S06 — Console operator interview
-            ├── S07 — Console operator interview
-            ├── S08 — Console operator interview
-            ├── S09 — Console operator interview
-            ├── S10 — Console operator interview
-            ├── S11 — Console operator interview
-            ├── S12 — Console operator interview
-            ├── WT01 — Console paper-prototype walk-through
-            ├── WT02 — Reconciliation view walk-through
-            ├── WT03 — Site-context surfacing walk-through
-            ├── WT04 — Commander acknowledgement walk-through
-            ├── Field Alpha 1 — Site Alpha day shift
-            ├── Field Alpha 2 — Site Alpha night shift
-            ├── Field Bravo 1 — Site Bravo day shift
-            └── Field Bravo 2 — Site Bravo night shift
+        └── Test-plans (Operator-console)/
+            └── Console-v1-usability-test
 ```
 
 Artefact-type folder titles carry the parent-track suffix in parentheses. This is the canonical filing convention from [`conventions/confluence-mcp.md`](../conventions/confluence-mcp.md) — Confluence Cloud enforces space-wide unique page titles, so two `Personas` folders in the same space would collide. The suffix makes disambiguation predictable. Track folders and leaf artefact pages do not take the suffix.
