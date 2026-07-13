@@ -1,0 +1,29 @@
+# Plane MCP filing discipline
+
+When you have Plane MCP tools available and are about to create or update a work item, apply these checks **in order, before filing**.
+
+- **Project check.** Verify a suitable Plane project exists for this programme. Projects are named after their programme; resolve it with `list_projects` and match on name (e.g. `SKYPROTECT` → identifier `SKYPR`). If no project exists, ask the user which project to use before proceeding — do not assume, do not create a new project yourself.
+- **Hierarchy check.** Resolve the full target path by walking down from the `Knowledge Base` work item to the artefact-type node, at write time. Start from the `Knowledge Base` root, then match the track child, then the artefact-type child, listing children at each level (`list_work_items` filtered by `parent`). The work item `id` of the artefact-type node returned by this walk is the `parent` for the write — no other source is permitted. Do **not** reuse a `parent` id carried from an earlier step, even within the same batch of writes; re-resolve for every write. The path string shown to the user at confirmation must be the literal trail of node names traversed in this step, so the displayed path and the actual write target derive from the same lookup. If any parent node along the path is missing, list the missing parents in the filing confirmation prompt (see `filing.md` step 3) so the user sees and authorises them in the same go as the leaf item — do **not** issue a separate prompt per placeholder. Once the user confirms, create the placeholders top-down (each with its `parent` set to the node above), then the leaf work item.
+  - Placeholder nodes (`Knowledge Base`, track nodes, artefact-type nodes) carry a short description: *"Placeholder — created to support filing structure."*
+  - **`Knowledge Base`** — root work item, `parent` empty.
+  - **Track node** — title is the track name verbatim (`Programme-wide`, `ABC`, etc.). No suffix. `parent` is `Knowledge Base`.
+  - **Artefact-type node** — title is the plain artefact type (`Personas`, `Journeys`, `PRDs`, `Field-notes`, etc.). **No `({{track}})` suffix** — Plane does not enforce unique titles, and the parent chain disambiguates. `parent` is the track node.
+  - **`Field-notes`** — created at every track level at KB setup time, including `Programme-wide`. Always contains a `_Template — Field note` child created at setup time. Users add their own notes as child work items; CLARA does not file artefacts here.
+  - **`_Template — Field note`** — the template child inside each `Field-notes` node. No suffix. Created at KB setup time with the standard field-note template body (see `conventions/field-notes.md`). Users duplicate this to start a new note, or add a fresh child work item.
+  - **Leaf artefact work item** — title is the artefact's own name (`Field operator`, `Shift handover friction`, etc.). The artefact content lives in the work item description. Disambiguate only if a real conflict comes up — never preemptively.
+- **No silent fallbacks.** If the full path cannot be created (insufficient permissions, no accessible project, anything else), stop and tell the user exactly what is blocked. Do not file the work item elsewhere without explicit confirmation. Do not improvise an alternative path.
+- **Update vs create.** If a work item already exists at the target path, ask the user whether to update in place (`update_work_item` — Plane's activity log preserves the change history) or to draft a new version at an alternative path. Do not silently overwrite.
+- **Post-write verification.** After each file, retrieve the created work item and confirm its `parent` matches the artefact-type node from the brief. If it doesn't, stop and report — do not proceed to the next write. This is a belt-and-braces safety net; the cost is one extra read per write, and it catches stated-path-vs-actual-write divergence at the moment it happens.
+
+## Metadata: types, states, and labels
+
+Plane exposes structured metadata that Confluence did not. Use it — it is additive to the parent-chain hierarchy, not a replacement for it.
+
+- **Work item type** — where the project defines custom work item types matching the artefact types (`Persona`, `PRD`, etc.), set `type_id` on the leaf artefact so it is filterable by type. If the project has no such types, the artefact-type *node* in the parent chain still carries the categorisation. Resolve type ids with `list_work_item_types`.
+- **State** — use states to reflect artefact maturity (e.g. draft → ready) where the project defines them. Do not invent states; read them with `list_states` and confirm with the user before applying anything beyond the project default.
+- **Labels** — the track and phase (Research/Design/Test) may be applied as labels for cross-cutting queries, in addition to the parent-chain placement. Resolve label ids with `list_labels`; only apply labels that already exist unless the user asks you to create one.
+- **Relations** — the upstream→downstream dependency chain (persona → journey → PRD) is recorded with `create_work_item_relation`, not just prose links. When an artefact is built from another artefact, relate them so the graph is navigable.
+
+## No Session-ID scheme
+
+Field-note work items are cited by their **native Plane identifier** (e.g. `SKYPR-42`), which Plane assigns on creation and never changes. There is no separate Session-ID assignment or write-back step. See `conventions/field-notes.md`.
