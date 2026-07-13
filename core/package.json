@@ -1,0 +1,20 @@
+{
+  "name": "clara",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CLARA (from the Latin clarus, 'clear') — an internal ProductOps tool that turns a programme's Plane knowledge base into structured Research artefacts.",
+  "type": "module",
+  "scripts": {
+    "build": "tsx build/build.ts",
+    "clean": "rm -rf dist && mkdir -p dist/prompts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "gray-matter": "^4.0.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  }
+}

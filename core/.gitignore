@@ -1,0 +1,17 @@
+node_modules/
+.DS_Store
+*.log
+.env
+.env.local
+AI_HANDOFF.md
+
+# Next.js / CLARA site
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Build output (generated per platform in the consumer repos)
+dist/
+dist-plane/
+dist-confluence/
