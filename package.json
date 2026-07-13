@@ -1,0 +1,17 @@
+{
+  "name": "clara-plane",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CLARA for Plane — thin platform build over clara-core.",
+  "type": "module",
+  "scripts": {
+    "build": "CLARA_PLATFORM=plane CLARA_OUT=dist tsx core/build/build.ts",
+    "core:pull": "git subtree pull --prefix=core https://github.com/ProductOpsDIUX/clara-core.git main --squash"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "gray-matter": "^4.0.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

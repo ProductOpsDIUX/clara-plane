@@ -1,0 +1,56 @@
+---
+title: Journey-map drafter
+phase: research
+domain: digital
+tool: clara
+task: draft a current-state journey map for a persona
+expectedOutput: >-
+  Markdown journey map with stages, actions, touchpoints, emotions, friction
+  points, and opportunities.
+inputsFrom:
+  - persona-generator
+  - research-synthesiser
+planeContext:
+  inputs:
+    - what: Persona for the journey
+      description: >-
+        Work item under `Knowledge Base/{{track}}/Personas/*`. Ask the user
+        which persona if there are multiple.
+    - what: 'Interview transcripts, observation notes'
+      description: >-
+        Field-note work items under the `Field-notes` node (or work items with
+        'interview', 'observation' in titles).
+    - what: Themes (optional)
+      description: >-
+        Themes section of the `Knowledge Base/{{track}}/Research-synthesis` work
+        item.
+    - what: Friction points (optional)
+      description: >-
+        Friction-points section of the `Knowledge
+        Base/{{track}}/Research-synthesis` work item. When present, the friction
+        column will be evidence-ranked.
+  outputPathTemplate: 'Knowledge Base/{{track}}/Journeys/{{journey-scope}}'
+visibility: public
+source: clara
+claraSourceSha: 634ac85826c58ee82e9a4978adfcf4ae410e5936
+copyBlock: Use CLARA's `journey-map-drafter` for <programme name>.
+---
+
+## What CLARA will ask you for
+
+- **Programme name** — your programme's name (e.g. SKYPROTECT).
+- **Track** — the slice of the programme this artefact belongs to (workstream, capability area, feature line, etc.), or `Programme-wide` if it spans tracks.
+- **Persona** — page reference, or the persona's name.
+- **Journey scope** — be specific: "submitting an incident report from the field", not "using the system".
+- **Inputs** — CLARA will search the programme's Plane project for persona for the journey; interview transcripts, observation notes; themes (optional); friction points (optional). You can also paste fresh material if it's not in Plane yet.
+
+## Where the output lands
+
+`Knowledge Base/{{track}}/Journeys/{{journey-scope}}` inside your programme's Plane project.
+
+## Tips
+
+- The current-state map is the goal. Future-state maps are a different artefact (and a different conversation).
+- "Moments of truth" — the steps where the persona forms a lasting impression — are usually 2 to 4 per journey. If you find more than 5, you're confusing moments-of-truth with friction points.
+- Pair the output with a visual via [Napkin AI](/tools/napkin-ai) — text-to-diagram works well for journey maps.
+- The output feeds the [service-blueprint drafter](/prompts/service-blueprint-drafter) for digital teams.
