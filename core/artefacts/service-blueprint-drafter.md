@@ -69,17 +69,32 @@ A good service blueprint:
 - Surfaces invisible work (the back-stage actions that customers don't see but depend on)
 - Names the systems and people involved at each step
 - Highlights handoffs — they're where failure usually lives
+- Groups the stages into a few phases, so a long process stays readable
 
-Output as markdown:
+Output as markdown. Group the journey's stages into **phases** (2-4), and render one compact table per phase rather than a single wide table — this keeps a long process legible. Lead with a phase-overview table.
 
 ## Service blueprint: [journey scope]
 **Persona:** [name]
 
-| Stage | Customer action | Front-stage | Back-stage | Support |
-|---|---|---|---|---|
-| [stage] | [what they do] | [visible interactions] | [hidden systems / actions] | [supporting processes] |
+**Scope:** [same scope as the source journey map, one line].
 
-(one row per stage, drawn from the journey map)
+### Phase overview
+
+| Phase | Stages |
+|---|---|
+| [phase 1 name] | [stage · stage] |
+| [phase 2 name] | [stage · stage] |
+
+### Phase 1: [name]
+
+|  | [stage] | [stage] |
+|---|---|---|
+| **Customer action** | [what they do] | … |
+| **Front-stage** | [visible interactions] | … |
+| **Back-stage** | [hidden systems / actions] | … |
+| **Support** | [supporting processes] | … |
+
+(repeat one table per phase; attributes as rows, that phase's stages as columns)
 
 ### Handoffs
 
@@ -89,7 +104,7 @@ Output as markdown:
 
 - [gap] — [evidence or "research needed"]
 
-If the system context doesn't cover a back-stage cell, leave it blank and flag in "Research gaps". Don't invent.
+If the system context doesn't cover a back-stage cell, leave it blank and flag it as a research gap. Don't invent. End with a `## Sources` section (journey map, persona, field notes by Session ID), per Output discipline.
 
 # filing
 

@@ -89,6 +89,8 @@ Output as markdown:
 ## Journey: [scope]
 **Persona:** [name]
 
+**Scope:** [one or two sentences — the specific task/experience this map covers, from where to where, and what it deliberately excludes]. Open with this so the reader knows the boundaries before the stages.
+
 ### Stage 1: [stage name]
 - **Actions:** [what the persona does]
 - **Touchpoints:** [systems, people, artefacts they interact with]
@@ -108,6 +110,8 @@ Output as markdown:
 2. ...
 
 If the research doesn't cover a stage, leave the cells blank and flag under "Research gaps" at the bottom. Don't invent.
+
+End with a `## Sources` section (persona, field notes by Session ID, research synthesis), per Output discipline.
 
 # filing
 
