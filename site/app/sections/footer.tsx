@@ -3,7 +3,10 @@ import { Text } from "@/components/ui/text";
 import { links } from "@/content/links";
 import { ArrowUpRight } from "lucide-react";
 
-const footerLinks = [{ label: "Source repo", href: links.repo }];
+const footerLinks = [
+  { label: "CLARA for Plane", href: links.plane },
+  { label: "CLARA for Confluence", href: links.confluence },
+];
 
 export function Footer() {
   return (

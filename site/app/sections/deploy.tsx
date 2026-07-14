@@ -10,6 +10,7 @@ import { Text } from "@/components/ui/text";
 import { links } from "@/content/links";
 import { stackPatterns } from "@/content/stack-patterns";
 import {
+  ArrowUpRight,
   CheckCircle2,
   FileText,
   GitBranch,
@@ -17,6 +18,52 @@ import {
   RefreshCcw,
   ShieldAlert,
 } from "lucide-react";
+
+const platforms = [
+  {
+    slug: "plane",
+    label: "CLARA for Plane",
+    repo: links.plane,
+    repoLabel: "Access repo",
+    body: "For programmes whose knowledge base lives in Plane. Artefacts file back as work items under the Knowledge Base hierarchy, cited by their native Plane identifiers.",
+    mcp: "Plane MCP",
+    connect:
+      "Wire the Plane MCP server into your LLM host, then install CLARA's skill file from the repo. CLARA uses whichever Plane MCP your stack provides — no separate connector.",
+    config: `{
+  "mcpServers": {
+    "plane": {
+      "command": "npx",
+      "args": ["-y", "@makeplane/plane-mcp-server"],
+      "env": {
+        "PLANE_API_TOKEN": "<your Plane API token>",
+        "PLANE_WORKSPACE_SLUG": "<your workspace slug>"
+      }
+    }
+  }
+}`,
+  },
+  {
+    slug: "confluence",
+    label: "CLARA for Confluence",
+    repo: links.confluence,
+    repoLabel: "Access repo",
+    body: "For programmes whose knowledge base lives in Confluence. Artefacts file back as pages under the Knowledge Base hierarchy, with field notes tracked by CLARA's Session-ID scheme.",
+    mcp: "Confluence MCP",
+    connect:
+      "Wire the Atlassian (Confluence) MCP server into your LLM host, then install CLARA's skill file from the repo. CLARA uses whichever Confluence MCP your stack provides — no separate connector.",
+    config: `{
+  "mcpServers": {
+    "atlassian": {
+      "url": "https://mcp.atlassian.com/v1/sse",
+      "env": {
+        "CONFLUENCE_SITE_URL": "<https://your-site.atlassian.net/wiki>",
+        "CONFLUENCE_API_TOKEN": "<your Atlassian API token>"
+      }
+    }
+  }
+}`,
+  },
+];
 
 const youNeed = [
   {
@@ -101,6 +148,55 @@ export function Deploy() {
                   <Text size="sm" variant="muted" className="leading-relaxed">
                     {body}
                   </Text>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Choose your platform */}
+        <div className="space-y-6">
+          <div className="space-y-2 max-w-2xl">
+            <Heading as="h3" size="xl">
+              Choose your platform
+            </Heading>
+            <Text size="sm" variant="muted" className="leading-relaxed">
+              One CLARA, two knowledge-base backends. Pick the build that matches where your
+              programme&rsquo;s knowledge base lives, then connect the matching MCP server.
+            </Text>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {platforms.map((p) => (
+              <Card key={p.slug}>
+                <CardHeader>
+                  <div className="flex items-center justify-between gap-2">
+                    <CardTitle className="text-lg">{p.label}</CardTitle>
+                    <a
+                      href={p.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm text-accent hover:underline"
+                    >
+                      {p.repoLabel}
+                      <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+                    </a>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <Text size="sm" variant="muted" className="leading-relaxed">
+                    {p.body}
+                  </Text>
+                  <div className="flex items-center gap-2 text-accent">
+                    <Plug className="h-4 w-4" aria-hidden />
+                    <Text size="sm" weight="medium" className="text-fg">
+                      Connect {p.mcp}
+                    </Text>
+                  </div>
+                  <Text size="sm" variant="muted" className="leading-relaxed">
+                    {p.connect}
+                  </Text>
+                  <CodeBlock>{p.config}</CodeBlock>
                 </CardContent>
               </Card>
             ))}
