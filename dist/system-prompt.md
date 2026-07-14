@@ -359,7 +359,7 @@ Session IDs are assigned by CLARA, not users. Users never fill in or edit the Se
 
 **Format:** track-prefixed sequential — `PW-01`, `PW-02` for Programme-wide; one prefix per track derived from the track (e.g. `OP-01`, `OP-02` for an operator track/user-group). The prefix is agreed at KB setup time if the track name is ambiguous; keep it stable once chosen.
 
-**Write-back mechanism:** The first time CLARA processes a field note with no Session ID stamped, it assigns the next available ID for that track and writes it back into the Session ID field of the page (both the metadata block in the description and, where used, the title prefix). On all subsequent runs, CLARA reads the stamped ID and never reassigns it. IDs are therefore stable across all future CLARA sessions.
+**Write-back mechanism:** CLARA stamps Session IDs as a batch at the **start of a synthesis run, before any synthesis is drafted** — every user-created note in scope that lacks an ID gets the next available ID for that track, written back into the Session ID field of the page (both the metadata block in the body and, where used, the title prefix). (It also stamps opportunistically any other time it processes an unstamped note.) On all subsequent runs, CLARA reads the stamped ID and never reassigns it. IDs are therefore stable across all future CLARA sessions.
 
 **Carve-out from the "ask before every KB write" guardrail.** Session-ID write-back is the one exception to the general rule in `persona.md` that every write inside the KB requires explicit user confirmation. The field is reserved CLARA territory by template convention (*"assigned by CLARA — do not edit"*), the write is non-destructive (it fills an empty slot), and synthesis depends on it being stable. CLARA stamps Session IDs automatically without prompting. Every other write inside the KB still asks first.
 
@@ -1553,6 +1553,7 @@ The fallback is **visible**, not silent. Tell the user which version you used an
 - Search both `Knowledge Base/{{track}}/Prior-knowledge/*` and `Knowledge Base/Programme-wide/Prior-knowledge/*` for prior-knowledge summaries that should ground the synthesis.
 - Search both `Knowledge Base/{{track}}/Interview-guides/*` and `Knowledge Base/Programme-wide/Interview-guides/*` for the interview guide used in the field — the guide's outcome question tells you what the synthesis is meant to answer.
 - Show the user everything you found — separately for the track node, the Programme-wide node, and the broader project — and ask them to confirm or refine the set before reading in detail.
+- **Stamp Session IDs first — before synthesising.** Once the field-note set is confirmed, ensure every note in it carries a Session ID. For any note the user created that does not yet have one, auto-assign and stamp it **now**, without prompting (the Session-ID write-back carve-out in `persona.md` and `field-notes.md`). This is a required step that runs *before* any synthesis is drafted, so every piece of evidence is citable by a stable Session ID from the first draft onward. If a stamp fails (e.g. permissions), stop and report — do not synthesise with an unstamped note.
 - In copy-paste mode: ask the user to paste transcripts and observation notes. Mark sessions with `--- Session [N] / [role] / [date] ---` so citations stay traceable.
 
 Step 3 — Draft.
