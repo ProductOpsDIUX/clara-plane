@@ -13,22 +13,22 @@ planeContext:
   inputs:
     - what: Operational scenario for this capability
       description: >-
-        Work item under `Knowledge Base/{{track}}/Operational scenarios/*`. Ask
-        the user which scenario if multiple.
+        Page under `Knowledge Base/{{track}}/Operational scenarios/*`. Ask the
+        user which scenario if multiple.
     - what: Capability brief or statement of operational need
       description: >-
-        Work items under *Briefs*, *Capability*, *Mission* (or with
+        Pages under *Briefs*, *Capability*, *Mission* (or with
         'capability-brief', 'operational-need', 'mission-statement' in titles).
     - what: >-
         Known constraints (optional) — regulatory, integration, schedule,
         platform
       description: >-
-        Work items under *Constraints*, *Compliance*, *Architecture* (or with
+        Pages under *Constraints*, *Compliance*, *Architecture* (or with
         'constraints', 'regulatory', 'integration' in titles).
   outputPathTemplate: 'Knowledge Base/{{track}}/Capability specs/{{capability-name}}'
 visibility: public
 source: clara
-claraSourceSha: 634ac85826c58ee82e9a4978adfcf4ae410e5936
+claraSourceSha: faa1c7e5f6c114ae87273aef963948ef6c3d0e0b
 copyBlock: Use CLARA's `capability-spec-generator` for <programme name>.
 ---
 

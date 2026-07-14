@@ -16,19 +16,19 @@ planeContext:
   inputs:
     - what: Journey map for the same scope
       description: >-
-        Work item under `Knowledge Base/{{track}}/Journeys/*`. Ask the user
-        which journey if there are multiple.
+        Page under `Knowledge Base/{{track}}/Journeys/*`. Ask the user which
+        journey if there are multiple.
     - what: Persona for the journey
-      description: 'Work item under `Knowledge Base/{{track}}/Personas/*`.'
+      description: 'Page under `Knowledge Base/{{track}}/Personas/*`.'
     - what: 'System context — systems, tools, and back-stage teams involved'
       description: >-
-        Work items under *Systems*, *Architecture*, *Operations*, *Teams* (or
-        with 'system', 'architecture', 'team' in titles). If little is
-        available, the back-stage cells will be flagged as research gaps.
+        Pages under *Systems*, *Architecture*, *Operations*, *Teams* (or with
+        'system', 'architecture', 'team' in titles). If little is available, the
+        back-stage cells will be flagged as research gaps.
   outputPathTemplate: 'Knowledge Base/{{track}}/Service blueprints/{{journey-scope}}'
 visibility: public
 source: clara
-claraSourceSha: 634ac85826c58ee82e9a4978adfcf4ae410e5936
+claraSourceSha: faa1c7e5f6c114ae87273aef963948ef6c3d0e0b
 copyBlock: Use CLARA's `service-blueprint-drafter` for <programme name>.
 ---
 
