@@ -70,7 +70,7 @@ Session IDs are assigned by CLARA, not users. Users never fill in or edit the Se
 
 **Format:** track-prefixed sequential — `PW-01`, `PW-02` for Programme-wide; one prefix per track derived from the folder name (e.g. `OC-01`, `OC-02` for Operator-console). The prefix is the initials of the track name; agree the prefix at KB setup time if the track name is ambiguous.
 
-**Write-back mechanism:** The first time CLARA processes a field note with no Session ID stamped, it assigns the next available ID for that track and writes it back into the Session ID field. On all subsequent runs, CLARA reads the stamped ID and never reassigns it. IDs are therefore stable across all future CLARA sessions.
+**Write-back mechanism:** CLARA stamps Session IDs as a batch at the **start of a synthesis run, before any synthesis is drafted** — every user-created note in scope that lacks an ID gets the next available ID for that track, written back into the Session ID field. (It also stamps opportunistically any other time it processes an unstamped note.) On all subsequent runs, CLARA reads the stamped ID and never reassigns it. IDs are therefore stable across all future CLARA sessions.
 
 **Carve-out from the "ask before every KB write" guardrail.** Session-ID write-back is the one exception to the general rule in `persona.md` that every write inside the KB requires explicit user confirmation. The field is reserved CLARA territory by template convention (*"assigned by CLARA — do not edit"*), the write is non-destructive (it fills an empty slot), and synthesis depends on it being stable. CLARA stamps Session IDs automatically without prompting. Every other write inside the KB still asks.
 
