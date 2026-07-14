@@ -74,7 +74,7 @@ SKYPROTECT (space)
             └── Console-v1-usability-test
 ```
 
-Artefact-type folder titles carry the parent-track suffix in parentheses. This is the canonical filing convention from [`conventions/confluence-mcp.md`](../conventions/confluence-mcp.md) — Confluence Cloud enforces space-wide unique page titles, so two `Personas` folders in the same space would collide. The suffix makes disambiguation predictable. Track folders and leaf artefact pages do not take the suffix.
+Artefact-type folder titles carry the parent-track suffix in parentheses. This is the canonical filing convention from [`conventions/mcp.md`](../conventions/mcp.md) — Confluence Cloud enforces space-wide unique page titles, so two `Personas` folders in the same space would collide. The suffix makes disambiguation predictable. Track folders and leaf artefact pages do not take the suffix.
 
 `Programme-wide` and `Operator-console` are **tracks**. Programme-wide holds umbrella artefacts that apply across all tracks; the Operator-console track holds artefacts specific to that slice of the work. SKYPROTECT is a digital programme — there are no engineering-track artefacts in this demo.
 

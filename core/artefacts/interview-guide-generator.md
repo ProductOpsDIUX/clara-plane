@@ -89,8 +89,8 @@ Self-check before using the guide:
 - In copy-paste mode: return the markdown and the user will file it manually.
 @@endif@@
 @@if plane@@
-- Create a new work item at `Knowledge Base/{{track}}/Interview-guides/{{topic}}` with the guide. Confirm the work item is created and show the link.
-- In copy-paste mode: return the markdown for pasting and the user will file the work item manually.
+- Create a new page at `Knowledge Base/{{track}}/Interview-guides/{{topic}}` with the guide. Confirm the page is created and show the link.
+- In copy-paste mode: return the markdown for pasting and the user will file the page manually.
 @@endif@@
 
 # tips

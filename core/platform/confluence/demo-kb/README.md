@@ -12,7 +12,7 @@ When authoring a new demo KB setup file, follow the conventions below. These are
 
 Every artefact-type folder (Personas, Journeys, PRDs, Field-notes, etc.) must include its parent track in parentheses — `Personas (Programme-wide)`, `Personas (Operator-console)`, `Field-notes (ABC)`. Track folders and leaf artefact pages do *not* take the suffix. Confluence Cloud enforces space-wide unique titles, so two `Personas` folders in the same space would otherwise collide.
 
-See [`../conventions/confluence-mcp.md`](../conventions/confluence-mcp.md).
+See [`../conventions/mcp.md`](../conventions/mcp.md).
 
 ### 2. Field-note metablock — bullet list, not pipe-table
 

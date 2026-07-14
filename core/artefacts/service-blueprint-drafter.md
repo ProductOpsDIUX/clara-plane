@@ -20,21 +20,21 @@ planeContext:
       description: "Page under `Knowledge Base/{{track}}/Journeys/*`. Ask the user which journey if there are multiple."
 @@endif@@
 @@if plane@@
-      description: "Work item under `Knowledge Base/{{track}}/Journeys/*`. Ask the user which journey if there are multiple."
+      description: "Page under `Knowledge Base/{{track}}/Journeys/*`. Ask the user which journey if there are multiple."
 @@endif@@
     - what: "Persona for the journey"
 @@if confluence@@
       description: "Page under `Knowledge Base/{{track}}/Personas/*`."
 @@endif@@
 @@if plane@@
-      description: "Work item under `Knowledge Base/{{track}}/Personas/*`."
+      description: "Page under `Knowledge Base/{{track}}/Personas/*`."
 @@endif@@
     - what: "System context — systems, tools, and back-stage teams involved"
 @@if confluence@@
       description: "Pages under *Systems*, *Architecture*, *Operations*, *Teams* (or with 'system', 'architecture', 'team' in titles). If little is available, the back-stage cells will be flagged as research gaps."
 @@endif@@
 @@if plane@@
-      description: "Work items under *Systems*, *Architecture*, *Operations*, *Teams* (or with 'system', 'architecture', 'team' in titles). If little is available, the back-stage cells will be flagged as research gaps."
+      description: "Pages under *Systems*, *Architecture*, *Operations*, *Teams* (or with 'system', 'architecture', 'team' in titles). If little is available, the back-stage cells will be flagged as research gaps."
 @@endif@@
   outputPathTemplate: "Knowledge Base/{{track}}/Service blueprints/{{journey-scope}}"
 visibility: "public"
@@ -57,7 +57,7 @@ Use this prompt to extend a journey map into a service blueprint — making the 
 - Search the programme's space for system-context pages — under *Systems*, *Architecture*, *Operations*, *Teams* (or with `system`, `architecture`, `team` in titles). If little is available, the back-stage cells will be flagged as research gaps.
 @@endif@@
 @@if plane@@
-- Search the programme's Plane project for system-context work items — under *Systems*, *Architecture*, *Operations*, *Teams* (or with `system`, `architecture`, `team` in titles). If little is available, the back-stage cells will be flagged as research gaps.
+- Search the programme's Plane project for system-context pages — under *Systems*, *Architecture*, *Operations*, *Teams* (or with `system`, `architecture`, `team` in titles). If little is available, the back-stage cells will be flagged as research gaps.
 @@endif@@
 - Show the user what you found and ask them to confirm or refine before reading in detail.
 - In copy-paste mode: ask for the journey map, the persona, and a description of the back-stage systems and teams that support the user-facing experience.
@@ -113,8 +113,8 @@ If the system context doesn't cover a back-stage cell, leave it blank and flag i
 - In copy-paste mode: return the markdown and the user will file it manually.
 @@endif@@
 @@if plane@@
-- Create a new work item at `Knowledge Base/{{track}}/Service blueprints/{{journey-scope}}`. Relate the work item to the journey map work item (and link it).
-- In copy-paste mode: return the markdown for pasting and the user will file the work item manually.
+- Create a new page at `Knowledge Base/{{track}}/Service blueprints/{{journey-scope}}`. Link the page to the journey map page.
+- In copy-paste mode: return the markdown for pasting and the user will file the page manually.
 @@endif@@
 
 # tips

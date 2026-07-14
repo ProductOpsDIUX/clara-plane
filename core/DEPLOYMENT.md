@@ -54,11 +54,11 @@ These are infrequent (target: monthly at most once steady-state). When CLARA shi
 
 Separate from the environment-level install above. Each programme that adopts CLARA does a one-time setup in its own knowledge base (a Plane project or a Confluence space):
 
-1. Create a top-level work item named **`Knowledge Base`** at the root of the programme's project. This is where all CLARA-filed artefacts live.
-2. Decide on the programme's track structure ahead of first use — workstream / capability area / feature line / sub-system, whatever applies. Track names go under `Knowledge Base` as child work items. Artefacts spanning tracks file under the literal track name `Programme-wide`.
-3. No further setup needed. CLARA creates artefact-type nodes (`Personas`, `Journeys`, `PRDs`, etc.) on first use, working top-down — placeholder work items are created automatically before the artefact lands.
+1. Create a top-level page named **`Knowledge Base`** at the root of the programme's project. This is where all CLARA-filed artefacts live.
+2. Decide on the programme's track structure ahead of first use — workstream / capability area / feature line / sub-system, whatever applies. Track names go under `Knowledge Base` as child pages. Artefacts spanning tracks file under the literal track name `Programme-wide`.
+3. No further setup needed. CLARA creates artefact-type nodes (`Personas`, `Journeys`, `PRDs`, etc.) on first use, working top-down — placeholder pages are created automatically before the artefact lands.
 
-The resulting hierarchy (each node a work item, nested by `parent`):
+The resulting hierarchy (each node a page, nested by `parent_id`):
 
 ```
 Knowledge Base /
@@ -85,7 +85,7 @@ Use CLARA's `persona-generator` for <a programme name with a knowledge base you 
 
 CLARA should respond with a one-line route confirmation ("Running `persona-generator` for <programme>") and a batched question asking for the track, persona name, and whether to search the knowledge base or accept paste-ins. If she instead launches into drafting without asking, the skill file didn't load — check that the system-prompt slot you used actually injects into user conversations.
 
-**Optional: demo knowledge base.** CLARA ships a self-contained demo KB at `demo-kb/SKYPROTECT-setup.md` for end-to-end testing without touching a real programme's project. Run that setup to create a `SKYPROTECT` project populated with sample interview transcripts, prior-knowledge work items, and a Knowledge Base skeleton — then `Use CLARA's \`persona-generator\` for SKYPROTECT.` will exercise the full read → draft → file loop against fixture data. SKYPROTECT is **not** a default programme; it doesn't exist until you run the setup.
+**Optional: demo knowledge base.** CLARA ships a self-contained demo KB at `demo-kb/SKYPROTECT-setup.md` for end-to-end testing without touching a real programme's project. Run that setup to create a `SKYPROTECT` project populated with sample interview transcripts, prior-knowledge pages, and a Knowledge Base skeleton — then `Use CLARA's \`persona-generator\` for SKYPROTECT.` will exercise the full read → draft → file loop against fixture data. SKYPROTECT is **not** a default programme; it doesn't exist until you run the setup.
 
 ## Where things live
 

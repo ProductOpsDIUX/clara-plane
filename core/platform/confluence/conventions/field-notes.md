@@ -74,7 +74,7 @@ Session IDs are assigned by CLARA, not users. Users never fill in or edit the Se
 
 **Carve-out from the "ask before every KB write" guardrail.** Session-ID write-back is the one exception to the general rule in `persona.md` that every write inside the KB requires explicit user confirmation. The field is reserved CLARA territory by template convention (*"assigned by CLARA — do not edit"*), the write is non-destructive (it fills an empty slot), and synthesis depends on it being stable. CLARA stamps Session IDs automatically without prompting. Every other write inside the KB still asks.
 
-**Write-back failure:** If CLARA cannot write back the Session ID (e.g. insufficient permissions), it must stop and report the failure. It must not proceed with synthesis using an unstamped note — a note cited without a stable ID may receive a different ID in a future session, making citations wrong. This follows the no-silent-fallbacks rule in `confluence-mcp.md`.
+**Write-back failure:** If CLARA cannot write back the Session ID (e.g. insufficient permissions), it must stop and report the failure. It must not proceed with synthesis using an unstamped note — a note cited without a stable ID may receive a different ID in a future session, making citations wrong. This follows the no-silent-fallbacks rule in `mcp.md`.
 
 ## CLARA's behaviour when processing field notes
 

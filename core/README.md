@@ -7,7 +7,7 @@ This is **`clara-core`**: the single, platform-neutral source of truth. It is co
 - **`clara-plane`** — CLARA for programmes whose knowledge base lives in **Plane**.
 - **`clara-confluence`** — CLARA for programmes whose knowledge base lives in **Confluence**.
 
-Both platform repos vendor this repo under `core/` and select a platform at build time. **All the drift-sensitive material — CLARA's persona, every artefact's drafting logic, and the Knowledge Base path/cascade policy — lives here, once.** Neither platform repo can fork it. Only vocabulary ("work item" vs "page") and filing mechanics differ, and those are isolated to the per-platform adapters.
+Both platform repos vendor this repo under `core/` and select a platform at build time. **All the drift-sensitive material — CLARA's persona, every artefact's drafting logic, and the Knowledge Base path/cascade policy — lives here, once.** Neither platform repo can fork it. Both platforms file the KB as nested pages; only the platform mechanics differ (Plane vs Confluence page APIs, and how nesting/edits are performed), isolated to the per-platform adapters.
 
 ## Why a shared core
 
@@ -39,7 +39,7 @@ Shared-core sources carry conditional blocks:
 
 ```
 @@if plane@@
-… Plane-specific wording (work item, project, native identifier) …
+… Plane-specific wording (Plane project, page nesting via the browser connection) …
 @@endif@@
 @@if confluence@@
 … Confluence-specific wording (page, space, Session ID) …

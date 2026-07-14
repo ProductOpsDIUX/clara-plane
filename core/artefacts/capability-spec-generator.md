@@ -19,21 +19,21 @@ planeContext:
       description: "Page under `Knowledge Base/{{track}}/Operational scenarios/*`. Ask the user which scenario if multiple."
 @@endif@@
 @@if plane@@
-      description: "Work item under `Knowledge Base/{{track}}/Operational scenarios/*`. Ask the user which scenario if multiple."
+      description: "Page under `Knowledge Base/{{track}}/Operational scenarios/*`. Ask the user which scenario if multiple."
 @@endif@@
     - what: "Capability brief or statement of operational need"
 @@if confluence@@
       description: "Pages under *Briefs*, *Capability*, *Mission* (or with 'capability-brief', 'operational-need', 'mission-statement' in titles)."
 @@endif@@
 @@if plane@@
-      description: "Work items under *Briefs*, *Capability*, *Mission* (or with 'capability-brief', 'operational-need', 'mission-statement' in titles)."
+      description: "Pages under *Briefs*, *Capability*, *Mission* (or with 'capability-brief', 'operational-need', 'mission-statement' in titles)."
 @@endif@@
     - what: "Known constraints (optional) — regulatory, integration, schedule, platform"
 @@if confluence@@
       description: "Pages under *Constraints*, *Compliance*, *Architecture* (or with 'constraints', 'regulatory', 'integration' in titles)."
 @@endif@@
 @@if plane@@
-      description: "Work items under *Constraints*, *Compliance*, *Architecture* (or with 'constraints', 'regulatory', 'integration' in titles)."
+      description: "Pages under *Constraints*, *Compliance*, *Architecture* (or with 'constraints', 'regulatory', 'integration' in titles)."
 @@endif@@
   outputPathTemplate: "Knowledge Base/{{track}}/Capability specs/{{capability-name}}"
 visibility: "public"
@@ -57,8 +57,8 @@ Use this prompt to turn an operational scenario into a structured capability spe
 - Look for known constraints — under *Constraints*, *Compliance*, *Architecture* (or with `constraints`, `regulatory`, `integration` in titles).
 @@endif@@
 @@if plane@@
-- Find the capability brief or statement of operational need — work items under *Briefs*, *Capability*, *Mission* (or with `capability-brief`, `operational-need`, `mission-statement` in titles).
-- Look for known constraints — work items under *Constraints*, *Compliance*, *Architecture* (or with `constraints`, `regulatory`, `integration` in titles).
+- Find the capability brief or statement of operational need — pages under *Briefs*, *Capability*, *Mission* (or with `capability-brief`, `operational-need`, `mission-statement` in titles).
+- Look for known constraints — pages under *Constraints*, *Compliance*, *Architecture* (or with `constraints`, `regulatory`, `integration` in titles).
 @@endif@@
 - Show the user what you found and ask them to confirm or refine before reading in detail.
 - In copy-paste mode: ask for the operational scenario, the capability brief, and any known measurable thresholds (accuracy, latency, recall, classification, etc.).
@@ -110,8 +110,8 @@ If the scenario doesn't justify a requirement, leave it out and flag under Open 
 - In copy-paste mode: return the markdown and the user will file it manually.
 @@endif@@
 @@if plane@@
-- Create a new work item at `Knowledge Base/{{track}}/Capability specs/{{capability-name}}`. Relate the work item to the operational scenario work item (and link it).
-- In copy-paste mode: return the markdown for pasting and the user will file the work item manually.
+- Create a new page at `Knowledge Base/{{track}}/Capability specs/{{capability-name}}`. Link the page to the operational scenario page.
+- In copy-paste mode: return the markdown for pasting and the user will file the page manually.
 @@endif@@
 
 # tips

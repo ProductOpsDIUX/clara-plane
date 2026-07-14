@@ -12,7 +12,7 @@ const steps = [
   {
     icon: Quote,
     title: "Draft",
-    body: "Every finding points to the source work item it came from. If the evidence is thin, CLARA flags the gap and asks before continuing.",
+    body: "Every finding points to the exact source it came from. If the evidence is thin, CLARA flags the gap and asks before continuing.",
   },
   {
     icon: FilePlus,
