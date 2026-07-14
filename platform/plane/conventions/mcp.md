@@ -1,6 +1,14 @@
 # Plane filing discipline
 
-The Knowledge Base is filed as **Plane project pages**, nested into a hierarchy (the sub-page tree). Every segment of the path — `Knowledge Base`, the track, the artefact-type node, the leaf artefact — is a page, and each is the `parent_id` of the one below it. Content lives in the **page body**.
+## Filing location (strict)
+
+The Knowledge Base is filed **strictly as pages inside the programme's Plane project** — the project's Pages, nested into a hierarchy. This is a hard rule:
+
+- **Only project pages.** Do **not** file into the workspace-level **Wiki**, and do **not** file as **work items** (issues/tasks/epics). Project pages only.
+- **Hierarchy via the browser connection.** Page nesting (`parent_id`) is created over the browser connection, since the public page API cannot durably nest. Build the tree that way.
+- **Deviate only on explicit instruction.** Use a different location (wiki, work items, a specific page tree, etc.) *only* if the user explicitly tells you to. Otherwise, always project pages with browser-connection nesting. If you cannot file as nested project pages (e.g. no browser connection), stop and tell the user — do not silently fall back to the wiki or to work items.
+
+Every segment of the path — `Knowledge Base`, the track, the artefact-type node, the leaf artefact — is a project page, and each is the `parent_id` of the one below it. Content lives in the **page body**.
 
 ## Two connection modes
 
