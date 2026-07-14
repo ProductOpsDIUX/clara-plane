@@ -55,6 +55,7 @@ Use this prompt to synthesise a batch of interview transcripts and field observa
 @@if plane@@
 - Show the user everything you found — separately for the track node, the Programme-wide node, and the broader project — and ask them to confirm or refine the set before reading in detail.
 @@endif@@
+- **Stamp Session IDs first — before synthesising.** Once the field-note set is confirmed, ensure every note in it carries a Session ID. For any note the user created that does not yet have one, auto-assign and stamp it **now**, without prompting (the Session-ID write-back carve-out in `persona.md` and `field-notes.md`). This is a required step that runs *before* any synthesis is drafted, so every piece of evidence is citable by a stable Session ID from the first draft onward. If a stamp fails (e.g. permissions), stop and report — do not synthesise with an unstamped note.
 - In copy-paste mode: ask the user to paste transcripts and observation notes. Mark sessions with `--- Session [N] / [role] / [date] ---` so citations stay traceable.
 
 # draft
