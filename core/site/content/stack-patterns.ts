@@ -43,7 +43,7 @@ async function handle(req: ChatRequest) {
     fileTarget:
       "Set CLARA as the default system prompt in your server's configuration.",
     steps: [
-      "Download `dist/system-prompt.md` and place it on the inference host.",
+      "Download `dist/system-prompt.md` from CLARA's repo and place it on the inference host.",
       "Point the server's default-system-prompt config field at the file path.",
       "Restart the inference service so the new default applies to all sessions.",
     ],
@@ -63,7 +63,7 @@ vllm serve <model> \\
     fileTarget:
       "Install via the host's organisation-level system-prompt slot, or as default project instructions on a shared workspace.",
     steps: [
-      "Download `dist/system-prompt.md`.",
+      "Download `dist/system-prompt.md` from CLARA's repo.",
       "Paste the contents into your vendor's organisation-level system-prompt field.",
       "If no org-level slot exists, create a shared Project / workspace with CLARA in its default instructions and direct users to it.",
     ],
@@ -75,7 +75,7 @@ vllm serve <model> \\
     fileTarget:
       "Inject CLARA on every conversation start in the UI's backend.",
     steps: [
-      "Bundle `dist/system-prompt.md` with your UI's backend deployment.",
+      "Download `dist/system-prompt.md` from CLARA's repo and bundle it with your UI's backend deployment.",
       "Read the file once at process start.",
       "Prepend the contents as the first `system` message of every new conversation thread.",
     ],
@@ -86,7 +86,7 @@ vllm serve <model> \\
     context: "Claude Code, the Anthropic Agent SDK, or Claude Desktop.",
     fileTarget: "Load `dist/SKILL.md` as a skill bundle.",
     steps: [
-      "Download `dist/SKILL.md` — the frontmatter-wrapped variant.",
+      "Download `dist/SKILL.md` from CLARA's repo — the frontmatter-wrapped variant.",
       "Place it where your host loads skills from (e.g. `~/.claude/skills/` for Claude Code).",
       "CLARA activates automatically when invoked by slug.",
     ],

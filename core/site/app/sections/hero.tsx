@@ -2,7 +2,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { Text } from "@/components/ui/text";
-import { links } from "@/content/links";
 import { ArrowRight } from "lucide-react";
 
 export function Hero() {
@@ -49,31 +48,6 @@ export function Hero() {
                 For platform teams
               </Button>
             </a>
-          </div>
-
-          <div className="space-y-3 pt-6">
-            <Text
-              size="sm"
-              variant="muted"
-              weight="medium"
-              className="uppercase tracking-[0.14em]"
-            >
-              One CLARA, two knowledge bases — pick your platform build
-            </Text>
-            <div className="flex flex-wrap items-center gap-3">
-              <a href={links.plane} className="inline-flex" target="_blank" rel="noreferrer">
-                <Button variant="outline" size="lg">
-                  CLARA for Plane
-                  <ArrowRight className="h-4 w-4" aria-hidden />
-                </Button>
-              </a>
-              <a href={links.confluence} className="inline-flex" target="_blank" rel="noreferrer">
-                <Button variant="outline" size="lg">
-                  CLARA for Confluence
-                  <ArrowRight className="h-4 w-4" aria-hidden />
-                </Button>
-              </a>
-            </div>
           </div>
         </div>
       </div>
