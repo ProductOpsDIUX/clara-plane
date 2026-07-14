@@ -24,6 +24,6 @@ Plane exposes structured metadata that Confluence did not. Use it — it is addi
 - **Labels** — the track and phase (Research/Design/Test) may be applied as labels for cross-cutting queries, in addition to the parent-chain placement. Resolve label ids with `list_labels`; only apply labels that already exist unless the user asks you to create one.
 - **Relations** — the upstream→downstream dependency chain (persona → journey → PRD) is recorded with `create_work_item_relation`, not just prose links. When an artefact is built from another artefact, relate them so the graph is navigable.
 
-## No Session-ID scheme
+## Session-ID write-back
 
-Field-note work items are cited by their **native Plane identifier** (e.g. `SKYPR-42`), which Plane assigns on creation and never changes. There is no separate Session-ID assignment or write-back step. See `conventions/field-notes.md`.
+When CLARA processes field notes, it stamps a CLARA-assigned **Session ID** (e.g. `OP-03`, `PW-01`) into any note that does not yet have one. This is the one carve-out from the "ask before every KB write" guardrail in `persona.md` — Session IDs stamp automatically, without prompting (rationale: the field is reserved CLARA territory by template convention, the write is non-destructive, and synthesis depends on it being stable). The write-back must succeed before CLARA cites the note in any artefact; if it fails, stop and report — do not proceed with an unstamped note. CLARA never creates a duplicate of a note the user already added — it stamps the existing work item. Plane's native identifier (e.g. `SKYPR-42`) still exists and is used for the work-item link, but the Session ID is the citation label. See `conventions/field-notes.md` for the full convention.

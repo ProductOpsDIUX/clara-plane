@@ -52,25 +52,26 @@ Use this prompt to draft a persona from research evidence.
 
 A good persona:
 - Names a specific archetype, not a vague "user"
-- Roots every claim in evidence (cite which sessions or pages back the claim)
+- Roots every claim in evidence (cite the Session IDs that back it)
 - Has goals about outcomes, not features
-- Has at least one surprising or non-obvious trait
+- Surfaces how the archetype *varies* rather than flattening it to an average
+- Marks thin/contested areas rather than inventing to fill the shape
 
-Output as markdown:
+Use this fuller structure, one `##` section per heading. Fill only the sections the evidence supports; where it's thin, keep the heading and flag the gap with `[thin]`/`[open]`/`[provisional]` rather than inventing.
 
 ### [Persona name — specific, memorable; not "User A"]
 
-- **Summary:** [one line]
-- **Goals (3 to 5):** outcome-focused
-  - [goal] — [evidence: session refs or page links]
-- **Pains (3 to 5):** with evidence
-  - [pain] — [evidence: session refs or page links]
-- **Context:** when, where, with whom they do the work
-- **Real quote:** "[verbatim]" — [session ref or page link]
-- **Non-obvious trait:** [the differentiating thing]
-- **Evidence sources:** [list of sessions or pages this persona is built from]
+- **Snapshot** — 2-3 lines: who they are, where they sit, what they're accountable for, and the one hard part of the job. Cite the sessions.
+- **Role and context** — the job as done: environment, tools, who they work with, cadence. Evidence per claim.
+- **Goals** — outcome-focused, 3-5. Each with evidence.
+- **How they vary** — the axes of variation the data actually shows (e.g. seniority, shift, a formative incident) — not a forced demographic split. Use direct quotes to show the range. Flag small cohorts as directional.
+- **Mental model of the system** — how they believe the system/process works, including where that model is wrong or distrusted. Evidence.
+- **Pains** — 3-5, with evidence and (where the synthesis provides it) severity/frequency.
+- **Behaviours the design needs to support** — what any solution must accommodate, drawn from the above. Evidence.
+- **Variations and non-personas** — adjacent roles seen in the data but not this persona, and explicitly who was *not* studied (mark `[open]`).
+- **Evidence table** — one row per source (Session ID · profile · note link), plus a synthesis row and any cross-programme row.
 
-If the research notes don't support a section, leave it blank — don't invent.
+If the research notes don't support a section, keep the heading and mark the gap — don't invent. End with the `## Sources` section (per Output discipline).
 
 # filing
 

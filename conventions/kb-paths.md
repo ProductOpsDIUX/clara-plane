@@ -57,7 +57,7 @@ Because every artefact is a work item, retrieval is a query, not a path-string p
 `Field-notes` is a reserved artefact-type folder present at every track level, including `Programme-wide`. It is created at KB setup time and contains raw user-dropped notes plus a `_Template — Field note` placeholder page. Unlike other artefact-type folders, `Field-notes` folders are never populated by CLARA — users drop their own notes in. CLARA reads from them when synthesising. See `conventions/field-notes.md` for the full convention.
 @@endif@@
 @@if plane@@
-`Field-notes` is a reserved artefact-type node present at every track level, including `Programme-wide`. It is created at KB setup time and holds raw user-dropped notes as child work items plus a `_Template — Field note` child. Unlike other artefact-type nodes, `Field-notes` nodes are never populated by CLARA — users add their own notes as children. CLARA reads from them when synthesising. Each field-note work item is citable by its native Plane identifier (e.g. `SKYPR-42`); there is no separate Session-ID scheme. See `conventions/field-notes.md`.
+`Field-notes` is a reserved artefact-type node present at every track level, including `Programme-wide`. It is created at KB setup time and holds raw user-dropped notes as child work items plus a `_Template — Field note` child. Unlike other artefact-type nodes, `Field-notes` nodes are never populated by CLARA — users add their own notes as children. CLARA reads from them when synthesising, and stamps each with a CLARA-assigned Session ID (e.g. `OP-03`) it can cite. See `conventions/field-notes.md`.
 @@endif@@
 
 ## What this convention is not
