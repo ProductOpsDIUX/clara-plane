@@ -25,7 +25,7 @@ const platforms = [
     label: "CLARA for Plane",
     repo: links.plane,
     repoLabel: "Access repo",
-    body: "For programmes whose knowledge base lives in Plane. Artefacts file back as work items under the Knowledge Base hierarchy, cited by their native Plane identifiers.",
+    body: "For programmes whose knowledge base lives in Plane. Artefacts file back as nested project pages under the Knowledge Base hierarchy, cited by CLARA-assigned Session IDs.",
     mcp: "Plane MCP",
     connect:
       "Wire the Plane MCP server into your LLM host, then install CLARA's skill file from the repo. CLARA uses whichever Plane MCP your stack provides — no separate connector.",

@@ -6,20 +6,20 @@ You are an AI assistant with Plane MCP tools. Your task is to populate a Plane p
 
 The user is testing a ProductOps Co-pilot portal that produces structured research artefacts and files them into Plane. SKYPROTECT is being used as test data.
 
-Every node in the Knowledge Base — tracks, artefact-type groupings, and leaf artefacts — is a **work item**. Hierarchy is expressed by the `parent` field: each work item's `parent` is the work item one level above it. Artefact content lives in the work item **description**.
+Every node in the Knowledge Base — tracks, artefact-type groupings, and leaf artefacts — is a **page**. Hierarchy is expressed by the `parent_id` field: each page's `parent_id` is the page one level above it. Artefact content lives in the page **description**.
 
-## Filing discipline (apply to every work item below)
+## Filing discipline (apply to every page below)
 
 1. **Project check.** Verify the `SKYPROTECT` project (identifier `SKYPR`) exists. If it does not, stop and report — do not create the project yourself.
-2. **Hierarchy check.** Before creating any artefact work item, verify every parent work item in its path exists. If a parent is missing, create it as a placeholder first (top-down), with name equal to the path-level name, its `parent` set to the work item above it, and description equal to *"Placeholder — created to support filing structure."*
-3. **No silent fallbacks.** If a work item cannot be created (permissions, missing project, anything), stop and report. Never file at the project root (a work item with no parent under Knowledge Base) or anywhere else without explicit confirmation.
+2. **Hierarchy check.** Before creating any artefact page, verify every parent page in its path exists. If a parent is missing, create it as a placeholder first (top-down), with name equal to the path-level name, its `parent_id` set to the page above it, and description equal to *"Placeholder — created to support filing structure."*
+3. **No silent fallbacks.** If a page cannot be created (permissions, missing project, anything), stop and report. Never file at the project root (a page with no parent under Knowledge Base) or anywhere else without explicit confirmation.
 4. **Labels are optional.** Plane supports labels, but the demo's hierarchy is carried entirely by the parent chain, not by labels. You may optionally apply Plane labels at creation time (e.g. `persona`, `field-note`) if the user wants them for filtering, but no label is required and none is load-bearing.
-5. **Create work items in the order listed below** — that order encodes the hierarchy, so every parent is created before its children.
-6. **Cite field notes by their native Plane identifier.** Inside the artefact bodies (synthesis, persona, journey, PRD), every reference to an interview, walk-through, or field observation must point to the corresponding field-note work item. Plane assigns each work item a native identifier (e.g. `SKYPR-42`) **on creation**, so you cannot know the identifiers in advance — they depend on creation order. When you create the field-note work items (below), record the identifier Plane returns for each. Then, when you create an artefact that cites a note, render the citation as a link to that note's work item, keeping the short human label (the note's own reference, e.g. `S01`, `WT02`, `Field Alpha 1`) as the visible link text. Do not invent fixed `SKYPR-N` numbers. The notes to link to are defined in work items 25-48.
+5. **Create pages in the order listed below** — that order encodes the hierarchy, so every parent is created before its children.
+6. **Cite field notes by their native Plane identifier.** Inside the artefact bodies (synthesis, persona, journey, PRD), every reference to an interview, walk-through, or field observation must point to the corresponding field-note page. Plane assigns each page a native identifier (e.g. `SKYPR-42`) **on creation**, so you cannot know the identifiers in advance — they depend on creation order. When you create the field-note pages (below), record the identifier Plane returns for each. Then, when you create an artefact that cites a note, render the citation as a link to that note's page, keeping the short human label (the note's own reference, e.g. `S01`, `WT02`, `Field Alpha 1`) as the visible link text. Do not invent fixed `SKYPR-N` numbers. The notes to link to are defined in pages 25-48.
 
 ## Target hierarchy
 
-Everything sits inside the `SKYPROTECT` project, as a tree of work items under a single top-level work item named **Knowledge Base**. Each node below is a work item whose `parent` is the node above it:
+Everything sits inside the `SKYPROTECT` project, as a tree of pages under a single top-level page named **Knowledge Base**. Each node below is a page whose `parent_id` is the node above it:
 
 ```
 SKYPROTECT (project, identifier SKYPR)
@@ -76,7 +76,7 @@ SKYPROTECT (project, identifier SKYPR)
             └── Console-v1-usability-test
 ```
 
-Artefact-type groupings (`Personas`, `Journeys`, `Field-notes`, etc.) are titled plainly, with no track suffix. Plane does not enforce unique titles, so two `Personas` work items in the same project are perfectly fine — they are disambiguated by their parent chain (`Programme-wide / Personas` versus `Operator-console / Personas`). Every level, including these groupings and each leaf artefact, is a work item nested under its parent.
+Artefact-type groupings (`Personas`, `Journeys`, `Field-notes`, etc.) are titled plainly, with no track suffix. Plane does not enforce unique titles, so two `Personas` pages in the same project are perfectly fine — they are disambiguated by their parent chain (`Programme-wide / Personas` versus `Operator-console / Personas`). Every level, including these groupings and each leaf artefact, is a page nested under its parent.
 
 `Programme-wide` and `Operator-console` are **tracks**. Programme-wide holds umbrella artefacts that apply across all tracks; the Operator-console track holds artefacts specific to that slice of the work. SKYPROTECT is a digital programme — there are no engineering-track artefacts in this demo.
 
@@ -86,17 +86,17 @@ A digital command-and-control system for counter-UAS (counter-unmanned-aircraft-
 
 The current toolchain in use across DSTA-supported sites is described by operators as *"three windows duct-taped together"* — separate vendor systems for each sensor type, with the operator manually reconciling contradictions. SKYPROTECT replaces that with a single fused-sensor console plus a commander oversight view.
 
-Use these names consistently across all work items so the demo coheres internally.
+Use these names consistently across all pages so the demo coheres internally.
 
 ---
 
-## Work items to create
+## Pages to create
 
-### Work item 1 — `Knowledge Base` (top-level parent placeholder)
+### Page 1 — `Knowledge Base` (top-level parent placeholder)
 
 - **Path:** `SKYPROTECT > Knowledge Base`
 - **Title:** `Knowledge Base`
-- **Parent:** none (top-level work item in the project)
+- **Parent:** none (top-level page in the project)
 - **Description:**
 
 ```
@@ -113,7 +113,7 @@ Filing convention: `Knowledge Base / <track> / <artefact-type> / <name>`.
 
 ---
 
-### Work item 2 — `Programme-wide` (track parent placeholder)
+### Page 2 — `Programme-wide` (track parent placeholder)
 
 - **Path:** `Knowledge Base > Programme-wide`
 - **Title:** `Programme-wide`
@@ -126,7 +126,7 @@ Programme-wide artefacts — personas, prior-knowledge summaries, and research s
 
 ---
 
-### Work item 3 — `Prior-knowledge` (grouping placeholder under Programme-wide)
+### Page 3 — `Prior-knowledge` (grouping placeholder under Programme-wide)
 
 - **Path:** `Programme-wide > Prior-knowledge`
 - **Title:** `Prior-knowledge`
@@ -135,7 +135,7 @@ Programme-wide artefacts — personas, prior-knowledge summaries, and research s
 
 ---
 
-### Work item 4 — `Counter-drone-systems` (prior-knowledge artefact)
+### Page 4 — `Counter-drone-systems` (prior-knowledge artefact)
 
 - **Path:** `Programme-wide > Prior-knowledge > Counter-drone-systems`
 - **Title:** `Counter-drone-systems`
@@ -175,7 +175,7 @@ A summary of what's already known across past programmes about counter-UAS syste
 
 ---
 
-### Work item 5 — `Research-synthesis` (programme-wide synthesis)
+### Page 5 — `Research-synthesis` (programme-wide synthesis)
 
 - **Path:** `Programme-wide > Research-synthesis`
 - **Title:** `Research-synthesis`
@@ -238,7 +238,7 @@ A summary of what's already known across past programmes about counter-UAS syste
 
 ---
 
-### Work item 6 — `Personas` (grouping placeholder under Programme-wide)
+### Page 6 — `Personas` (grouping placeholder under Programme-wide)
 
 - **Path:** `Programme-wide > Personas`
 - **Title:** `Personas`
@@ -247,7 +247,7 @@ A summary of what's already known across past programmes about counter-UAS syste
 
 ---
 
-### Work item 7 — `Air-defence-commander` (programme-wide persona)
+### Page 7 — `Air-defence-commander` (programme-wide persona)
 
 - **Path:** `Programme-wide > Personas > Air-defence-commander`
 - **Title:** `Air-defence-commander`
@@ -282,7 +282,7 @@ A summary of what's already known across past programmes about counter-UAS syste
 
 ---
 
-### Work item 8 — `Operator-console` (track parent placeholder)
+### Page 8 — `Operator-console` (track parent placeholder)
 
 - **Path:** `Knowledge Base > Operator-console`
 - **Title:** `Operator-console`
@@ -297,7 +297,7 @@ Artefacts in this track are scoped to operators' use of the console. Programme-w
 
 ---
 
-### Work item 9 — `Research-synthesis` (track-level)
+### Page 9 — `Research-synthesis` (track-level)
 
 - **Path:** `Operator-console > Research-synthesis`
 - **Title:** `Research-synthesis`
@@ -355,7 +355,7 @@ Artefacts in this track are scoped to operators' use of the console. Programme-w
 
 ---
 
-### Work item 10 — `Personas` (grouping placeholder under Operator-console)
+### Page 10 — `Personas` (grouping placeholder under Operator-console)
 
 - **Path:** `Operator-console > Personas`
 - **Title:** `Personas`
@@ -364,7 +364,7 @@ Artefacts in this track are scoped to operators' use of the console. Programme-w
 
 ---
 
-### Work item 11 — `Console-operator` (track-specific persona)
+### Page 11 — `Console-operator` (track-specific persona)
 
 - **Path:** `Operator-console > Personas > Console-operator`
 - **Title:** `Console-operator`
@@ -400,7 +400,7 @@ Artefacts in this track are scoped to operators' use of the console. Programme-w
 
 ---
 
-### Work item 12 — `Journeys` (grouping placeholder under Operator-console)
+### Page 12 — `Journeys` (grouping placeholder under Operator-console)
 
 - **Path:** `Operator-console > Journeys`
 - **Title:** `Journeys`
@@ -409,7 +409,7 @@ Artefacts in this track are scoped to operators' use of the console. Programme-w
 
 ---
 
-### Work item 13 — `Engage-incoming-threat` (journey map)
+### Page 13 — `Engage-incoming-threat` (journey map)
 
 - **Path:** `Operator-console > Journeys > Engage-incoming-threat`
 - **Title:** `Engage-incoming-threat`
@@ -494,7 +494,7 @@ Artefacts in this track are scoped to operators' use of the console. Programme-w
 
 ---
 
-### Work item 14 — `PRDs` (grouping placeholder under Operator-console)
+### Page 14 — `PRDs` (grouping placeholder under Operator-console)
 
 - **Path:** `Operator-console > PRDs`
 - **Title:** `PRDs`
@@ -503,7 +503,7 @@ Artefacts in this track are scoped to operators' use of the console. Programme-w
 
 ---
 
-### Work item 15 — `Console-v1` (PRD)
+### Page 15 — `Console-v1` (PRD)
 
 - **Path:** `Operator-console > PRDs > Console-v1`
 - **Title:** `Console-v1`
@@ -571,7 +571,7 @@ Secondary: **Air-defence commanders** (see `Programme-wide / Personas / Air-defe
 
 ---
 
-### Work item 16 — `Journeys` (grouping placeholder under Programme-wide)
+### Page 16 — `Journeys` (grouping placeholder under Programme-wide)
 
 - **Path:** `Programme-wide > Journeys`
 - **Title:** `Journeys`
@@ -580,7 +580,7 @@ Secondary: **Air-defence commanders** (see `Programme-wide / Personas / Air-defe
 
 ---
 
-### Work item 17 — `PRDs` (grouping placeholder under Programme-wide)
+### Page 17 — `PRDs` (grouping placeholder under Programme-wide)
 
 - **Path:** `Programme-wide > PRDs`
 - **Title:** `PRDs`
@@ -589,7 +589,7 @@ Secondary: **Air-defence commanders** (see `Programme-wide / Personas / Air-defe
 
 ---
 
-### Work item 18 — `Interview-guides` (grouping placeholder under Programme-wide)
+### Page 18 — `Interview-guides` (grouping placeholder under Programme-wide)
 
 - **Path:** `Programme-wide > Interview-guides`
 - **Title:** `Interview-guides`
@@ -598,7 +598,7 @@ Secondary: **Air-defence commanders** (see `Programme-wide / Personas / Air-defe
 
 ---
 
-### Work item 19 — `Prior-knowledge` (grouping placeholder under Operator-console)
+### Page 19 — `Prior-knowledge` (grouping placeholder under Operator-console)
 
 - **Path:** `Operator-console > Prior-knowledge`
 - **Title:** `Prior-knowledge`
@@ -607,7 +607,7 @@ Secondary: **Air-defence commanders** (see `Programme-wide / Personas / Air-defe
 
 ---
 
-### Work item 20 — `Interview-guides` (grouping placeholder under Operator-console)
+### Page 20 — `Interview-guides` (grouping placeholder under Operator-console)
 
 - **Path:** `Operator-console > Interview-guides`
 - **Title:** `Interview-guides`
@@ -616,7 +616,7 @@ Secondary: **Air-defence commanders** (see `Programme-wide / Personas / Air-defe
 
 ---
 
-### Work item 21 — `Field-notes` (grouping placeholder under Programme-wide)
+### Page 21 — `Field-notes` (grouping placeholder under Programme-wide)
 
 - **Path:** `Programme-wide > Field-notes`
 - **Title:** `Field-notes`
@@ -625,7 +625,7 @@ Secondary: **Air-defence commanders** (see `Programme-wide / Personas / Air-defe
 
 ---
 
-### Work item 22 — `_Template — Field note` (template under Programme-wide field notes)
+### Page 22 — `_Template — Field note` (template under Programme-wide field notes)
 
 - **Path:** `Programme-wide > Field-notes > _Template — Field note`
 - **Title:** `_Template — Field note`
@@ -635,10 +635,10 @@ Secondary: **Air-defence commanders** (see `Programme-wide / Personas / Air-defe
 ```
 ## How to use this template
 
-1. **Create a new work item** under the `Field-notes` grouping (set its `parent` to `Field-notes`). Copy the structure below into its description.
-2. **Name your copy** something memorable — e.g. `Commander-session-2026-05-22`, `Cross-site-handover-observation-2026-05-30`. Use whatever scheme suits you; CLARA reads the description, not the title.
+1. **Create a new page** under the `Field-notes` grouping (set its `parent_id` to `Field-notes`). Copy the structure below into its description.
+2. **Name your copy** something memorable — e.g. `Commander-session-2026-05-22`, `Cross-site-handover-observation-2026-05-30`. Use whatever scheme suits you; CLARA reads the body, not the title.
     - Drop the `_Template — ` prefix.
-3. **Cite this note by its Plane identifier.** Plane assigns the work item a native identifier (e.g. `SKYPR-42`) on creation — that identifier is how artefacts reference this note. You don't set it; Plane does.
+3. **Cite this note by its Plane identifier.** Plane assigns the page a native identifier (e.g. `SKYPR-42`) on creation — that identifier is how artefacts reference this note. You don't set it; Plane does.
 4. **Fill in the rest.** Participants and User group are optional but useful; Raw notes and Verbatim quotes are the substance.
 5. Delete this *How to use* block before saving — it's guidance for you, not part of the note.
 
@@ -662,7 +662,7 @@ _Exact words from participants only. Attribute to role where possible — e.g. C
 
 ---
 
-### Work item 23 — `Field-notes` (grouping placeholder under Operator-console)
+### Page 23 — `Field-notes` (grouping placeholder under Operator-console)
 
 - **Path:** `Operator-console > Field-notes`
 - **Title:** `Field-notes`
@@ -671,7 +671,7 @@ _Exact words from participants only. Attribute to role where possible — e.g. C
 
 ---
 
-### Work item 24 — `_Template — Field note` (template under Operator-console field notes)
+### Page 24 — `_Template — Field note` (template under Operator-console field notes)
 
 - **Path:** `Operator-console > Field-notes > _Template — Field note`
 - **Title:** `_Template — Field note`
@@ -681,10 +681,10 @@ _Exact words from participants only. Attribute to role where possible — e.g. C
 ```
 ## How to use this template
 
-1. **Create a new work item** under the `Field-notes` grouping (set its `parent` to `Field-notes`). Copy the structure below into its description.
-2. **Name your copy** something memorable — e.g. `Operator-session-2026-05-22`, `Site-Alpha-night-shift-observation-2026-05-30`. Use whatever scheme suits you; CLARA reads the description, not the title.
+1. **Create a new page** under the `Field-notes` grouping (set its `parent_id` to `Field-notes`). Copy the structure below into its description.
+2. **Name your copy** something memorable — e.g. `Operator-session-2026-05-22`, `Site-Alpha-night-shift-observation-2026-05-30`. Use whatever scheme suits you; CLARA reads the body, not the title.
     - Drop the `_Template — ` prefix.
-3. **Cite this note by its Plane identifier.** Plane assigns the work item a native identifier (e.g. `SKYPR-42`) on creation — that identifier is how artefacts reference this note. You don't set it; Plane does.
+3. **Cite this note by its Plane identifier.** Plane assigns the page a native identifier (e.g. `SKYPR-42`) on creation — that identifier is how artefacts reference this note. You don't set it; Plane does.
 4. **Fill in the rest.** Participants and User group are optional but useful; Raw notes and Verbatim quotes are the substance.
 5. Delete this *How to use* block before saving — it's guidance for you, not part of the note.
 
@@ -708,7 +708,7 @@ _Exact words from participants only. Attribute to role where possible — e.g. C
 
 ---
 
-### Work item 25 — `S13 — Air-defence commander interview`
+### Page 25 — `S13 — Air-defence commander interview`
 
 - **Path:** `Programme-wide > Field-notes > S13 — Air-defence commander interview`
 - **Title:** `S13 — Air-defence commander interview`
@@ -742,7 +742,7 @@ Commander: "If I'm visibly watching their screen they slow down. I've stopped do
 
 ---
 
-### Work item 26 — `S14 — Air-defence commander interview`
+### Page 26 — `S14 — Air-defence commander interview`
 
 - **Path:** `Programme-wide > Field-notes > S14 — Air-defence commander interview`
 - **Title:** `S14 — Air-defence commander interview`
@@ -776,7 +776,7 @@ Commander: "I've literally trained myself to count to two before the high-stakes
 
 ---
 
-### Work item 27 — `S15 — Air-defence commander interview`
+### Page 27 — `S15 — Air-defence commander interview`
 
 - **Path:** `Programme-wide > Field-notes > S15 — Air-defence commander interview`
 - **Title:** `S15 — Air-defence commander interview`
@@ -814,7 +814,7 @@ Commander: "I want to be able to sleep on the call. Right now the only record is
 
 ---
 
-### Work item 28 — `S16 — Air-defence commander interview`
+### Page 28 — `S16 — Air-defence commander interview`
 
 - **Path:** `Programme-wide > Field-notes > S16 — Air-defence commander interview`
 - **Title:** `S16 — Air-defence commander interview`
@@ -848,7 +848,7 @@ Commander: "I keep my own log on paper because I don't trust the system to recor
 
 ---
 
-### Work item 29 — `S01 — Console operator interview`
+### Page 29 — `S01 — Console operator interview`
 
 - **Path:** `Operator-console > Field-notes > S01 — Console operator interview`
 - **Title:** `S01 — Console operator interview`
@@ -882,7 +882,7 @@ Operator: "If radar and RF disagree, I'm just guessing. There's no tool for that
 
 ---
 
-### Work item 30 — `S02 — Console operator interview`
+### Page 30 — `S02 — Console operator interview`
 
 - **Path:** `Operator-console > Field-notes > S02 — Console operator interview`
 - **Title:** `S02 — Console operator interview`
@@ -916,7 +916,7 @@ Operator: "The heli-pad gives a return every morning at 0600. I've figured that 
 
 ---
 
-### Work item 31 — `S03 — Console operator interview`
+### Page 31 — `S03 — Console operator interview`
 
 - **Path:** `Operator-console > Field-notes > S03 — Console operator interview`
 - **Title:** `S03 — Console operator interview`
@@ -950,7 +950,7 @@ Operator: "When I know command is on the line I'm slower. I'm choosing my words.
 
 ---
 
-### Work item 32 — `S04 — Console operator interview`
+### Page 32 — `S04 — Console operator interview`
 
 - **Path:** `Operator-console > Field-notes > S04 — Console operator interview`
 - **Title:** `S04 — Console operator interview`
@@ -984,7 +984,7 @@ Operator: "Three sensors weakly agreeing is harder to fake than one sensor stron
 
 ---
 
-### Work item 33 — `S05 — Console operator interview`
+### Page 33 — `S05 — Console operator interview`
 
 - **Path:** `Operator-console > Field-notes > S05 — Console operator interview`
 - **Title:** `S05 — Console operator interview`
@@ -1018,7 +1018,7 @@ Operator: "I have a notebook. Heli-pad 0600 return. Tree line at the southeast c
 
 ---
 
-### Work item 34 — `S06 — Console operator interview`
+### Page 34 — `S06 — Console operator interview`
 
 - **Path:** `Operator-console > Field-notes > S06 — Console operator interview`
 - **Title:** `S06 — Console operator interview`
@@ -1052,7 +1052,7 @@ Operator: "I'd trust three of them weakly agreeing more than one of them shoutin
 
 ---
 
-### Work item 35 — `S07 — Console operator interview`
+### Page 35 — `S07 — Console operator interview`
 
 - **Path:** `Operator-console > Field-notes > S07 — Console operator interview`
 - **Title:** `S07 — Console operator interview`
@@ -1086,7 +1086,7 @@ Operator: "I go to the camera every time. Every. Time."
 
 ---
 
-### Work item 36 — `S08 — Console operator interview`
+### Page 36 — `S08 — Console operator interview`
 
 - **Path:** `Operator-console > Field-notes > S08 — Console operator interview`
 - **Title:** `S08 — Console operator interview`
@@ -1124,7 +1124,7 @@ Operator: "Is the commander listening or not? My screen doesn't know."
 
 ---
 
-### Work item 37 — `S09 — Console operator interview`
+### Page 37 — `S09 — Console operator interview`
 
 - **Path:** `Operator-console > Field-notes > S09 — Console operator interview`
 - **Title:** `S09 — Console operator interview`
@@ -1160,7 +1160,7 @@ Operator: "When I reconstruct, I sound more certain than I was. The log is wrong
 
 ---
 
-### Work item 38 — `S10 — Console operator interview`
+### Page 38 — `S10 — Console operator interview`
 
 - **Path:** `Operator-console > Field-notes > S10 — Console operator interview`
 - **Title:** `S10 — Console operator interview`
@@ -1192,7 +1192,7 @@ Operator: "I trust three sensors weakly agreeing more than one shouting. The sho
 
 ---
 
-### Work item 39 — `S11 — Console operator interview`
+### Page 39 — `S11 — Console operator interview`
 
 - **Path:** `Operator-console > Field-notes > S11 — Console operator interview`
 - **Title:** `S11 — Console operator interview`
@@ -1228,7 +1228,7 @@ Operator: "I want to defend the decision later. Right now what I have is what I 
 
 ---
 
-### Work item 40 — `S12 — Console operator interview`
+### Page 40 — `S12 — Console operator interview`
 
 - **Path:** `Operator-console > Field-notes > S12 — Console operator interview`
 - **Title:** `S12 — Console operator interview`
@@ -1258,7 +1258,7 @@ Operator: "By the time the camera has slewed I've already opened two other thing
 
 ---
 
-### Work item 41 — `WT01 — Console paper-prototype walk-through`
+### Page 41 — `WT01 — Console paper-prototype walk-through`
 
 - **Path:** `Operator-console > Field-notes > WT01 — Console paper-prototype walk-through`
 - **Title:** `WT01 — Console paper-prototype walk-through`
@@ -1293,7 +1293,7 @@ Operator (4 yrs): "Maybe a free-text field, but after the decision, not before."
 
 ---
 
-### Work item 42 — `WT02 — Reconciliation view walk-through`
+### Page 42 — `WT02 — Reconciliation view walk-through`
 
 - **Path:** `Operator-console > Field-notes > WT02 — Reconciliation view walk-through`
 - **Title:** `WT02 — Reconciliation view walk-through`
@@ -1329,7 +1329,7 @@ Operator: "Full takeover is fine for the big calls. Don't take over my screen fo
 
 ---
 
-### Work item 43 — `WT03 — Site-context surfacing walk-through`
+### Page 43 — `WT03 — Site-context surfacing walk-through`
 
 - **Path:** `Operator-console > Field-notes > WT03 — Site-context surfacing walk-through`
 - **Title:** `WT03 — Site-context surfacing walk-through`
@@ -1366,7 +1366,7 @@ Operator: "Show me what the operator before me figured out. Don't make me re-fig
 
 ---
 
-### Work item 44 — `WT04 — Commander acknowledgement walk-through`
+### Page 44 — `WT04 — Commander acknowledgement walk-through`
 
 - **Path:** `Operator-console > Field-notes > WT04 — Commander acknowledgement walk-through`
 - **Title:** `WT04 — Commander acknowledgement walk-through`
@@ -1403,7 +1403,7 @@ Operator: "Either is better than what we have. Right now I just don't know."
 
 ---
 
-### Work item 45 — `Field Alpha 1 — Site Alpha day shift`
+### Page 45 — `Field Alpha 1 — Site Alpha day shift`
 
 - **Path:** `Operator-console > Field-notes > Field Alpha 1 — Site Alpha day shift`
 - **Title:** `Field Alpha 1 — Site Alpha day shift`
@@ -1441,7 +1441,7 @@ Operator (end of shift): "I'll do the logs now. From memory."
 
 ---
 
-### Work item 46 — `Field Alpha 2 — Site Alpha night shift`
+### Page 46 — `Field Alpha 2 — Site Alpha night shift`
 
 - **Path:** `Operator-console > Field-notes > Field Alpha 2 — Site Alpha night shift`
 - **Title:** `Field Alpha 2 — Site Alpha night shift`
@@ -1477,7 +1477,7 @@ Operator (end of shift, doing logs): "I'm guessing at what I was thinking three 
 
 ---
 
-### Work item 47 — `Field Bravo 1 — Site Bravo day shift`
+### Page 47 — `Field Bravo 1 — Site Bravo day shift`
 
 - **Path:** `Operator-console > Field-notes > Field Bravo 1 — Site Bravo day shift`
 - **Title:** `Field Bravo 1 — Site Bravo day shift`
@@ -1513,7 +1513,7 @@ Operator (mid-alert, post-radio): "Did she hear me. I'm going to call again."
 
 ---
 
-### Work item 48 — `Field Bravo 2 — Site Bravo night shift`
+### Page 48 — `Field Bravo 2 — Site Bravo night shift`
 
 - **Path:** `Operator-console > Field-notes > Field Bravo 2 — Site Bravo night shift`
 - **Title:** `Field Bravo 2 — Site Bravo night shift`
@@ -1551,7 +1551,7 @@ Operator (end of shift): "Three weeks here and I'm still figuring out what's a r
 
 ---
 
-### Work item 49 — `Test-plans` (grouping placeholder under Programme-wide)
+### Page 49 — `Test-plans` (grouping placeholder under Programme-wide)
 
 - **Path:** `Programme-wide > Test-plans`
 - **Title:** `Test-plans`
@@ -1560,7 +1560,7 @@ Operator (end of shift): "Three weeks here and I'm still figuring out what's a r
 
 ---
 
-### Work item 50 — `Test-plans` (grouping placeholder under Operator-console)
+### Page 50 — `Test-plans` (grouping placeholder under Operator-console)
 
 - **Path:** `Operator-console > Test-plans`
 - **Title:** `Test-plans`
@@ -1569,7 +1569,7 @@ Operator (end of shift): "Three weeks here and I'm still figuring out what's a r
 
 ---
 
-### Work item 51 — `Console-v1-usability-test` (test plan)
+### Page 51 — `Console-v1-usability-test` (test plan)
 
 - **Path:** `Operator-console > Test-plans > Console-v1-usability-test`
 - **Title:** `Console-v1-usability-test`
@@ -1674,14 +1674,14 @@ Determine whether console operators can complete an alert-to-engagement-decision
 
 ---
 
-## After all work items are created
+## After all pages are created
 
 Report back to the user with:
 
-1. The total number of work items created
-2. Any work items that already existed and were updated vs newly created
-3. The native Plane identifiers assigned to the field-note work items (25-48), so the user can confirm the artefact citations resolve
-4. The full URL of the top-level `Knowledge Base` work item in the SKYPROTECT project so the user can verify
+1. The total number of pages created
+2. Any pages that already existed and were updated vs newly created
+3. The native Plane identifiers assigned to the field-note pages (25-48), so the user can confirm the artefact citations resolve
+4. The full URL of the top-level `Knowledge Base` page in the SKYPROTECT project so the user can verify
 5. Any issues encountered (e.g. permissions, name conflicts) — verbatim, no paraphrasing
 
 If anything was not created, do **not** retry or improvise. Stop and report.

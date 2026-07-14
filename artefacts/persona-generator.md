@@ -19,7 +19,7 @@ planeContext:
       description: "Pages under *Interviews*, *Field notes*, *Sessions*, *Surveys* (or with 'interview', 'observation', 'session-notes' in titles). Restrict to this programme's space."
 @@endif@@
 @@if plane@@
-      description: "Field-note work items under the `Field-notes` node (or work items with 'interview', 'observation', 'session-notes' in titles). Restrict to this programme's Plane project."
+      description: "Field-note pages under the `Field-notes` node (or pages with 'interview', 'observation', 'session-notes' in titles). Restrict to this programme's Plane project."
 @@endif@@
     - what: "Themes and Friction points from the Research synthesis (optional)"
       description: "Themes and Friction-points sections of `Knowledge Base/{{track}}/Research-synthesis`. Falls back to `Knowledge Base/Programme-wide/Research-synthesis` when no track-level version exists. Sharpens the persona's pains and goals."
@@ -42,7 +42,7 @@ Use this prompt to draft a persona from research evidence.
 - Search for interview transcripts, observation notes, or survey responses in the programme's Confluence space. Look for pages under *Interviews*, *Field notes*, *Sessions*, *Surveys* (or with `interview`, `observation`, `session-notes` in titles).
 @@endif@@
 @@if plane@@
-- Search for interview transcripts, observation notes, or survey responses in the programme's Plane project. Look for field-note work items under the `Field-notes` node (or work items with `interview`, `observation`, `session-notes` in titles).
+- Search for interview transcripts, observation notes, or survey responses in the programme's Plane project. Look for field-note pages under the `Field-notes` node (or pages with `interview`, `observation`, `session-notes` in titles).
 @@endif@@
 - Read the Themes and Friction-points sections of `Knowledge Base/{{track}}/Research-synthesis` if available. These sharpen the persona's pains and goals.
 - Show the user what you found and ask them to confirm or refine the set before reading in detail.
@@ -80,8 +80,8 @@ If the research notes don't support a section, keep the heading and mark the gap
 - In copy-paste mode: return the markdown and the user will file it manually.
 @@endif@@
 @@if plane@@
-- Create a new work item at `Knowledge Base/{{track}}/Personas/{{persona-name}}`. Relate the work item to its source research work items (and link them).
-- In copy-paste mode: return the markdown for pasting and the user will file the work item manually.
+- Create a new page at `Knowledge Base/{{track}}/Personas/{{persona-name}}`. Link the page to its source research pages.
+- In copy-paste mode: return the markdown for pasting and the user will file the page manually.
 @@endif@@
 
 # tips

@@ -12,21 +12,21 @@ CLARA provides two flows for provisioning the Knowledge Base structure in Plane:
 2. **Programme type** — CLARA asks: digital or engineering?
 3. **Active tracks** — CLARA asks for the current track list. The user provides track names; CLARA repeats them back for confirmation.
 4. **Preview** — CLARA shows the full hierarchy it is about to create and asks for a go-ahead before writing anything.
-5. **Create** — CLARA creates the full structure top-down in one pass, setting each work item's `parent` to the node above it.
-6. **Report** — CLARA states the number of work items created, the URL/identifier of the `Knowledge Base` work item, and any failures verbatim.
+5. **Create** — CLARA creates the full structure top-down in one pass: it creates each page, then nests it under the node above via the browser connection (`parent_id`). Nesting requires the browser connection — the public page API cannot durably set `parent_id`.
+6. **Report** — CLARA states the number of pages created, the URL of the `Knowledge Base` page, and any failures verbatim.
 
 ### What setup-kb creates
 
-Every node is a Plane work item; the tree is formed by `parent` links.
+Every node is a Plane page; the tree is formed by `parent_id` links.
 
-- **`Knowledge Base`** — root work item (no `parent`). Its description stores `Programme type: Digital` or `Programme type: Engineering`. This is the only metadata CLARA writes here; tracks are not stored (CLARA discovers them at runtime from the children of `Knowledge Base`).
-- **`Programme-wide`** — track node, `parent` = `Knowledge Base`.
-- **All artefact-type nodes under `Programme-wide`** — plain titles, no suffix, `parent` = `Programme-wide`.
-- **For each track supplied by the user:** a track node, `parent` = `Knowledge Base`.
-- **All artefact-type nodes under each track** — plain titles, no suffix, `parent` = the track node.
-- **`_Template — Field note`** as a child of every `Field-notes` node. Plain title, no suffix — Plane does not enforce unique titles, so multiple `_Template — Field note` items across different `Field-notes` nodes coexist (see `conventions/field-notes.md` and `conventions/plane-mcp.md`).
+- **`Knowledge Base`** — root page (no `parent_id`). Its description stores `Programme type: Digital` or `Programme type: Engineering`. This is the only metadata CLARA writes here; tracks are not stored (CLARA discovers them at runtime from the children of `Knowledge Base`).
+- **`Programme-wide`** — track node, `parent_id` = `Knowledge Base`.
+- **All artefact-type nodes under `Programme-wide`** — plain titles, no suffix, `parent_id` = `Programme-wide`.
+- **For each track supplied by the user:** a track node, `parent_id` = `Knowledge Base`.
+- **All artefact-type nodes under each track** — plain titles, no suffix, `parent_id` = the track node.
+- **`_Template — Field note`** as a child of every `Field-notes` node. Plain title, no suffix — Plane does not enforce unique titles, so multiple `_Template — Field note` items across different `Field-notes` nodes coexist (see `conventions/field-notes.md` and `conventions/mcp.md`).
 
-Where the project defines custom work item types matching the artefact types, CLARA may set `type_id` on the corresponding nodes so the tree is also filterable by type. This is additive to the parent-chain structure, not a substitute for it.
+The parent-nesting (the sub-page tree) is the only structure — pages carry no work-item-style types, states, or labels. Categorisation comes from the artefact-type node a page is nested under.
 
 ### Artefact-type vocabulary
 
@@ -60,9 +60,9 @@ The artefact-type nodes created at every level (Programme-wide and each track) d
 
 - `Test-plans` (always last)
 
-`Research-synthesis` is created as a leaf work item per track (not a container node with children), as each track produces one synthesis document held in that item's description. All other types are container nodes holding leaf artefact work items.
+`Research-synthesis` is created as a leaf page per track (not a container node with children), as each track produces one synthesis document held in that page's body. All other types are container nodes holding leaf artefact pages.
 
-All node titles are plain — no `({{track}})` suffix — per the naming rule in `conventions/plane-mcp.md`.
+All node titles are plain — no `({{track}})` suffix — per the naming rule in `conventions/mcp.md`.
 
 ### Re-running setup-kb
 
@@ -78,13 +78,13 @@ Used when new tracks are added to a programme mid-programme. Does not require re
 
 ### Flow
 
-1. **Project and KB check** — CLARA verifies the programme project and the `Knowledge Base` work item exist. If not, CLARA stops and asks the user to run setup-kb first. CLARA reads `Programme type: Digital` or `Programme type: Engineering` from the KB work item description to determine which artefact-type vocabulary to use; if the line is missing or malformed, CLARA stops and asks the user to confirm the programme type before proceeding.
+1. **Project and KB check** — CLARA verifies the programme project and the `Knowledge Base` page exist. If not, CLARA stops and asks the user to run setup-kb first. CLARA reads `Programme type: Digital` or `Programme type: Engineering` from the KB page body to determine which artefact-type vocabulary to use; if the line is missing or malformed, CLARA stops and asks the user to confirm the programme type before proceeding.
 2. **Confirm track name** — CLARA repeats the track name back and confirms before creating anything.
 3. **Create** — CLARA creates the track node and all artefact-type nodes under it (same vocabulary as setup-kb, gated by the programme type from step 1), including `Field-notes` and its `_Template — Field note` child.
-4. **Report** — work items created, track node URL, any failures verbatim.
+4. **Report** — pages created, track node URL, any failures verbatim.
 
 ---
 
 ## Track discovery
 
-CLARA never stores a track list. When CLARA needs to know which tracks exist in a programme, it lists the children of the `Knowledge Base` work item at runtime. The KB structure is the source of truth for tracks.
+CLARA never stores a track list. When CLARA needs to know which tracks exist in a programme, it lists the children of the `Knowledge Base` page at runtime. The KB structure is the source of truth for tracks.

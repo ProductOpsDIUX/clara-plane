@@ -27,7 +27,7 @@ Knowledge Base / Programme-wide / <artefact-type> / *
 When the same artefact-type exists in both locations, the **track-level version takes precedence**. The programme-wide version is the fallback.
 @@endif@@
 @@if plane@@
-Resolve each artefact-type node by walking the parent chain, then list its child work items (`list_work_items` filtered by `parent`). Where the project applies a track label, the same two-scope search can be expressed as a query filtering on the track and `Programme-wide` scopes. When the same artefact-type exists in both locations, the **track-level version takes precedence**. The programme-wide version is the fallback.
+Resolve each artefact-type node by walking the parent chain, then list its child pages (`list_pages` filtered by `parent_id`). Where the project applies a track label, the same two-scope search can be expressed as a query filtering on the track and `Programme-wide` scopes. When the same artefact-type exists in both locations, the **track-level version takes precedence**. The programme-wide version is the fallback.
 @@endif@@
 
 The fallback is **visible**, not silent. Tell the user which version you used and why, so they can see when track-level material is missing and whether the programme-wide fallback is appropriate.

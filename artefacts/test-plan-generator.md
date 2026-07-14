@@ -26,7 +26,7 @@ planeContext:
       description: "Pages under `Knowledge Base/{{track}}/Field-notes (* )/*`. Useful for grounding scenarios in observed alert content, edge cases, and ambiguity. Reference field-note IDs in the scenarios so readers can trace back."
 @@endif@@
 @@if plane@@
-      description: "Field-note work items under the `Field-notes` node (`Knowledge Base/{{track}}/Field-notes/*`). Useful for grounding scenarios in observed alert content, edge cases, and ambiguity. Reference field-note IDs in the scenarios so readers can trace back."
+      description: "Field-note pages under the `Field-notes` node (`Knowledge Base/{{track}}/Field-notes/*`). Useful for grounding scenarios in observed alert content, edge cases, and ambiguity. Reference field-note IDs in the scenarios so readers can trace back."
 @@endif@@
   outputPathTemplate: "Knowledge Base/{{track}}/Test-plans/{{test-name}}"
 visibility: "public"
@@ -51,8 +51,8 @@ Use this prompt to draft a complete test plan — including scenarios — in one
 - Read the Success-criteria section of the relevant Research-synthesis page (track-level, fall back to programme-wide).
 @@endif@@
 @@if plane@@
-- Identify the artefact being tested. For digital: a PRD work item. For engineering: an operational-scenario + capability-spec pair. Confirm the path(s) with the user before reading in detail.
-- Read the Success-criteria section of the relevant Research-synthesis work item (track-level, fall back to programme-wide).
+- Identify the artefact being tested. For digital: a PRD page. For engineering: an operational-scenario + capability-spec pair. Confirm the path(s) with the user before reading in detail.
+- Read the Success-criteria section of the relevant Research-synthesis page (track-level, fall back to programme-wide).
 @@endif@@
 - Optionally scan field notes for material that scenarios can be seeded from — anonymised alert content, ambiguity that operators experienced, recurring edge cases. Reference the field-note IDs in the scenarios you write.
 - Show the user what you found and confirm test type, test focus, and constraints before drafting. If the user didn't name a focus, restate the success criteria you found and confirm "all of these" is the intent.
@@ -133,8 +133,8 @@ Rules:
 - In copy-paste mode: return the markdown and the user will file it manually.
 @@endif@@
 @@if plane@@
-- Create a new work item at `Knowledge Base/{{track}}/Test-plans/{{test-name}}`. Relate the work item to the artefact being tested (PRD or operational-scenario + capability-spec) and the Research-synthesis work item the success criteria come from (and link them).
-- In copy-paste mode: return the markdown for pasting and the user will file the work item manually.
+- Create a new page at `Knowledge Base/{{track}}/Test-plans/{{test-name}}`. Link the page to the artefact being tested (PRD or operational-scenario + capability-spec) and the Research-synthesis page the success criteria come from.
+- In copy-paste mode: return the markdown for pasting and the user will file the page manually.
 @@endif@@
 
 # tips

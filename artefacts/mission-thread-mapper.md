@@ -19,14 +19,14 @@ planeContext:
       description: "Page under `Knowledge Base/{{track}}/Operational scenarios/*`. Ask the user which scenario."
 @@endif@@
 @@if plane@@
-      description: "Work item under `Knowledge Base/{{track}}/Operational scenarios/*`. Ask the user which scenario."
+      description: "Page under `Knowledge Base/{{track}}/Operational scenarios/*`. Ask the user which scenario."
 @@endif@@
     - what: "System context — systems, platforms, comms involved"
 @@if confluence@@
       description: "Pages under *Systems*, *Architecture*, *Platforms*, *Communications* (or with 'system', 'architecture', 'platform', 'comms' in titles). Optional but useful."
 @@endif@@
 @@if plane@@
-      description: "Work items under *Systems*, *Architecture*, *Platforms*, *Communications* (or with 'system', 'architecture', 'platform', 'comms' in titles). Optional but useful."
+      description: "Pages under *Systems*, *Architecture*, *Platforms*, *Communications* (or with 'system', 'architecture', 'platform', 'comms' in titles). Optional but useful."
 @@endif@@
   outputPathTemplate: "Knowledge Base/{{track}}/Mission threads/{{mission-task}}"
 visibility: "public"
@@ -49,7 +49,7 @@ Use this prompt to map the end-to-end mission thread — the full chain of actor
 - Search the programme's space for system-context pages — under *Systems*, *Architecture*, *Platforms*, *Communications* (or with `system`, `architecture`, `platform`, `comms` in titles). Optional but useful.
 @@endif@@
 @@if plane@@
-- Search the programme's Plane project for system-context work items — under *Systems*, *Architecture*, *Platforms*, *Communications* (or with `system`, `architecture`, `platform`, `comms` in titles). Optional but useful.
+- Search the programme's Plane project for system-context pages — under *Systems*, *Architecture*, *Platforms*, *Communications* (or with `system`, `architecture`, `platform`, `comms` in titles). Optional but useful.
 @@endif@@
 - Show the user what you found and ask them to confirm or refine before reading in detail.
 - In copy-paste mode: ask for the operational scenario and a description of the systems / sensors / data flows the mission task touches.
@@ -96,8 +96,8 @@ If the scenario doesn't cover a step, leave it blank and flag under "Open questi
 - In copy-paste mode: return the markdown and the user will file it manually.
 @@endif@@
 @@if plane@@
-- Create a new work item at `Knowledge Base/{{track}}/Mission threads/{{mission-task}}`. Relate the work item to the operational scenario work item (and link it).
-- In copy-paste mode: return the markdown for pasting and the user will file the work item manually.
+- Create a new page at `Knowledge Base/{{track}}/Mission threads/{{mission-task}}`. Link the page to the operational scenario page.
+- In copy-paste mode: return the markdown for pasting and the user will file the page manually.
 @@endif@@
 
 # tips

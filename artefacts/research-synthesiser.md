@@ -20,7 +20,7 @@ planeContext:
       description: "Pages under folders/pages named *Interviews*, *Field notes*, *Sessions*, *Exercises* (or with 'interview', 'transcript', 'session-notes', 'observation', 'field-notes', 'exercise' in titles). Restrict to this programme's space."
 @@endif@@
 @@if plane@@
-      description: "Field-note work items under the `Field-notes` node (or work items with 'interview', 'transcript', 'session-notes', 'observation', 'field-notes', 'exercise' in titles). Restrict to this programme's Plane project."
+      description: "Field-note pages under the `Field-notes` node (or pages with 'interview', 'transcript', 'session-notes', 'observation', 'field-notes', 'exercise' in titles). Restrict to this programme's Plane project."
 @@endif@@
     - what: "Prior-knowledge summary on the topic (optional)"
       description: "Search both `Knowledge Base/{{track}}/Prior-knowledge/*` and `Knowledge Base/Programme-wide/Prior-knowledge/*`. Use it for grounding — the synthesis should build on what's already known, not re-discover it."
@@ -45,7 +45,7 @@ Use this prompt to synthesise a batch of interview transcripts and field observa
 - Search the programme's space broadly for interview transcripts, field-notes, observation pages, and exercise debriefs. Pages under folders/pages named *Interviews*, *Field notes*, *Sessions*, *Exercises* (or with `interview`, `transcript`, `session-notes`, `observation`, `field-notes`, `exercise` in titles).
 @@endif@@
 @@if plane@@
-- Search the programme's Plane project broadly for interview transcripts, field-notes, observation notes, and exercise debriefs. Field-note work items under the `Field-notes` node (or work items with `interview`, `transcript`, `session-notes`, `observation`, `field-notes`, `exercise` in titles).
+- Search the programme's Plane project broadly for interview transcripts, field-notes, observation notes, and exercise debriefs. Field-note pages under the `Field-notes` node (or pages with `interview`, `transcript`, `session-notes`, `observation`, `field-notes`, `exercise` in titles).
 @@endif@@
 - Search both `Knowledge Base/{{track}}/Prior-knowledge/*` and `Knowledge Base/Programme-wide/Prior-knowledge/*` for prior-knowledge summaries that should ground the synthesis.
 - Search both `Knowledge Base/{{track}}/Interview-guides/*` and `Knowledge Base/Programme-wide/Interview-guides/*` for the interview guide used in the field — the guide's outcome question tells you what the synthesis is meant to answer.
@@ -115,8 +115,8 @@ Things the data didn't answer — for the next round of field engagement, or for
 - In copy-paste mode: return the full markdown and the user will file it manually.
 @@endif@@
 @@if plane@@
-- Create or update a work item at `Knowledge Base/{{track}}/Research-synthesis`. Relate the work item to its source work items (and link them). Confirm and show the link.
-- In copy-paste mode: return the full markdown for pasting and the user will file the work item manually.
+- Create or update a page at `Knowledge Base/{{track}}/Research-synthesis`. Link the page to its source pages. Confirm and show the link.
+- In copy-paste mode: return the full markdown for pasting and the user will file the page manually.
 @@endif@@
 
 # tips

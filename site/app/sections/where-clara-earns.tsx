@@ -145,7 +145,7 @@ export function WhereClaraEarns() {
 
           <FeatureCard
             icon={Quote}
-            title="Citations at work-item level"
+            title="Citations at source level"
             body="Every finding points to the exact source item it came from. If a stakeholder asks &lsquo;where did this come from?&rsquo;, you can answer instantly — the link is in the artefact."
           />
 

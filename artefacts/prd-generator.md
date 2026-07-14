@@ -22,7 +22,7 @@ planeContext:
       description: "Page under `Knowledge Base/{{track}}/Personas/*` or `Knowledge Base/Programme-wide/Personas/*`. Ask the user which persona if multiple."
 @@endif@@
 @@if plane@@
-      description: "Work item under `Knowledge Base/{{track}}/Personas/*` or `Knowledge Base/Programme-wide/Personas/*`. Ask the user which persona if multiple."
+      description: "Page under `Knowledge Base/{{track}}/Personas/*` or `Knowledge Base/Programme-wide/Personas/*`. Ask the user which persona if multiple."
 @@endif@@
     - what: "Themes from the Research synthesis (optional)"
       description: "Themes section of `Knowledge Base/{{track}}/Research-synthesis` or `Knowledge Base/Programme-wide/Research-synthesis`."
@@ -31,7 +31,7 @@ planeContext:
       description: "Programme brief / charter / requesting note. Pages with 'brief', 'ask', 'charter' in titles."
 @@endif@@
 @@if plane@@
-      description: "Programme brief / charter / requesting note. Work items with 'brief', 'ask', 'charter' in titles."
+      description: "Programme brief / charter / requesting note. Pages with 'brief', 'ask', 'charter' in titles."
 @@endif@@
   outputPathTemplate: "Knowledge Base/{{track}}/PRDs/{{prd-title}}"
 visibility: "public"
@@ -55,7 +55,7 @@ Use this prompt to draft a first-pass PRD from research synthesis and stakeholde
 - Find the original stakeholder ask — programme brief / charter / requesting note. Pages with `brief`, `ask`, `charter` in titles.
 @@endif@@
 @@if plane@@
-- Find the original stakeholder ask — programme brief / charter / requesting note. Work items with `brief`, `ask`, `charter` in titles.
+- Find the original stakeholder ask — programme brief / charter / requesting note. Pages with `brief`, `ask`, `charter` in titles.
 @@endif@@
 - Show the user what you found and ask them to confirm or refine before reading in detail.
 - In copy-paste mode: ask the user for each of these inputs in turn.
@@ -91,8 +91,8 @@ Output as markdown.
 - In copy-paste mode: return the markdown and the user will file it manually.
 @@endif@@
 @@if plane@@
-- Create a new work item at `Knowledge Base/{{track}}/PRDs/{{prd-title}}`. Relate the work item to the problem statement, success criteria, and persona work items (and link them).
-- In copy-paste mode: return the markdown for pasting and the user will file the work item manually.
+- Create a new page at `Knowledge Base/{{track}}/PRDs/{{prd-title}}`. Link the page to the problem statement, success criteria, and persona pages.
+- In copy-paste mode: return the markdown for pasting and the user will file the page manually.
 @@endif@@
 
 # tips

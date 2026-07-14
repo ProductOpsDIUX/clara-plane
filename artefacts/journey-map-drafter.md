@@ -20,28 +20,28 @@ planeContext:
       description: "Page under `Knowledge Base/{{track}}/Personas/*`. Ask the user which persona if there are multiple."
 @@endif@@
 @@if plane@@
-      description: "Work item under `Knowledge Base/{{track}}/Personas/*`. Ask the user which persona if there are multiple."
+      description: "Page under `Knowledge Base/{{track}}/Personas/*`. Ask the user which persona if there are multiple."
 @@endif@@
     - what: "Interview transcripts, observation notes"
 @@if confluence@@
       description: "Pages under *Interviews*, *Field notes*, *Sessions* (or with 'interview', 'observation' in titles)."
 @@endif@@
 @@if plane@@
-      description: "Field-note work items under the `Field-notes` node (or work items with 'interview', 'observation' in titles)."
+      description: "Field-note pages under the `Field-notes` node (or pages with 'interview', 'observation' in titles)."
 @@endif@@
     - what: "Themes (optional)"
 @@if confluence@@
       description: "Page at Themes section of `Knowledge Base/{{track}}/Research-synthesis`."
 @@endif@@
 @@if plane@@
-      description: "Themes section of the `Knowledge Base/{{track}}/Research-synthesis` work item."
+      description: "Themes section of the `Knowledge Base/{{track}}/Research-synthesis` page."
 @@endif@@
     - what: "Friction points (optional)"
 @@if confluence@@
       description: "Page at Friction-points section of `Knowledge Base/{{track}}/Research-synthesis`. When present, the friction column will be evidence-ranked."
 @@endif@@
 @@if plane@@
-      description: "Friction-points section of the `Knowledge Base/{{track}}/Research-synthesis` work item. When present, the friction column will be evidence-ranked."
+      description: "Friction-points section of the `Knowledge Base/{{track}}/Research-synthesis` page. When present, the friction column will be evidence-ranked."
 @@endif@@
   outputPathTemplate: "Knowledge Base/{{track}}/Journeys/{{journey-scope}}"
 visibility: "public"
@@ -65,14 +65,14 @@ Use this prompt to draft a current-state journey map — how a persona currently
 - Search the programme's space for interview transcripts and observation notes that cover the journey scope.
 @@endif@@
 @@if plane@@
-- Search the programme's Plane project for field-note work items under the `Field-notes` node that cover the journey scope.
+- Search the programme's Plane project for field-note pages under the `Field-notes` node that cover the journey scope.
 @@endif@@
 - Show the user what you found and ask them to confirm or refine the set before reading in detail.
 @@if confluence@@
 - In copy-paste mode: ask for the persona, the journey scope, and the Themes and Friction-points sections of the Research-synthesis page.
 @@endif@@
 @@if plane@@
-- In copy-paste mode: ask for the persona, the journey scope, and the Themes and Friction-points sections of the Research-synthesis work item.
+- In copy-paste mode: ask for the persona, the journey scope, and the Themes and Friction-points sections of the Research-synthesis page.
 @@endif@@
 
 # draft
@@ -120,8 +120,8 @@ End with a `## Sources` section (persona, field notes by Session ID, research sy
 - In copy-paste mode: return the markdown and the user will file it manually.
 @@endif@@
 @@if plane@@
-- Create a new work item at `Knowledge Base/{{track}}/Journeys/{{journey-scope}}`. Relate the work item to the persona work item and to its source research work items (and link them).
-- In copy-paste mode: return the markdown for pasting and the user will file the work item manually.
+- Create a new page at `Knowledge Base/{{track}}/Journeys/{{journey-scope}}`. Link the page to the persona page and to its source research pages.
+- In copy-paste mode: return the markdown for pasting and the user will file the page manually.
 @@endif@@
 
 # tips

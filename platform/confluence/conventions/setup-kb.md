@@ -22,7 +22,7 @@ CLARA provides two flows for provisioning the Knowledge Base structure in Conflu
 - **All artefact-type folders under `Programme-wide`** with the `(Programme-wide)` suffix
 - **For each track supplied by the user:** track folder placeholder
 - **All artefact-type folders under each track** with the `({{track}})` suffix
-- **`_Template — Field note ({{track}})`** as a child of every `Field-notes ({{track}})` folder. The template title carries the same `({{track}})` suffix as its parent folder — Confluence Cloud enforces space-wide unique titles, so a programme with more than one Field-notes folder cannot have two bare `_Template — Field note` pages (see `conventions/field-notes.md` and `conventions/confluence-mcp.md`).
+- **`_Template — Field note ({{track}})`** as a child of every `Field-notes ({{track}})` folder. The template title carries the same `({{track}})` suffix as its parent folder — Confluence Cloud enforces space-wide unique titles, so a programme with more than one Field-notes folder cannot have two bare `_Template — Field note` pages (see `conventions/field-notes.md` and `conventions/mcp.md`).
 
 ### Artefact-type vocabulary
 
@@ -58,7 +58,7 @@ The artefact-type folders created at every level (Programme-wide and each track)
 
 `Research-synthesis` is created as a leaf placeholder page per track (not a folder with children), as each track produces one synthesis document. All other types are folder placeholders containing leaf artefact pages.
 
-All folder titles carry the `({{track}})` suffix per the artefact-type folder naming rule in `conventions/confluence-mcp.md`.
+All folder titles carry the `({{track}})` suffix per the artefact-type folder naming rule in `conventions/mcp.md`.
 
 ### Re-running setup-kb
 
