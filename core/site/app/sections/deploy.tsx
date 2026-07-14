@@ -28,19 +28,9 @@ const platforms = [
     body: "For programmes whose knowledge base lives in Plane. Artefacts file back as nested project pages under the Knowledge Base hierarchy, cited by CLARA-assigned Session IDs.",
     mcp: "Plane MCP",
     connect:
-      "Wire the Plane MCP server into your LLM host, then install CLARA's skill file from the repo. CLARA uses whichever Plane MCP your stack provides — no separate connector.",
-    config: `{
-  "mcpServers": {
-    "plane": {
-      "command": "npx",
-      "args": ["-y", "@makeplane/plane-mcp-server"],
-      "env": {
-        "PLANE_API_TOKEN": "<your Plane API token>",
-        "PLANE_WORKSPACE_SLUG": "<your workspace slug>"
-      }
-    }
-  }
-}`,
+      "Plane MCP must be connected manually — it isn't available as a one-click connector in Claude yet. Set up the Plane MCP server against your workspace by following Plane's step-by-step guide, then CLARA uses it.",
+    guideUrl: "https://developers.plane.so/dev-tools/mcp-server",
+    guideLabel: "Plane MCP setup guide",
   },
   {
     slug: "confluence",
@@ -50,18 +40,9 @@ const platforms = [
     body: "For programmes whose knowledge base lives in Confluence. Artefacts file back as pages under the Knowledge Base hierarchy, with field notes tracked by CLARA's Session-ID scheme.",
     mcp: "Confluence MCP",
     connect:
-      "Wire the Atlassian (Confluence) MCP server into your LLM host, then install CLARA's skill file from the repo. CLARA uses whichever Confluence MCP your stack provides — no separate connector.",
-    config: `{
-  "mcpServers": {
-    "atlassian": {
-      "url": "https://mcp.atlassian.com/v1/sse",
-      "env": {
-        "CONFLUENCE_SITE_URL": "<https://your-site.atlassian.net/wiki>",
-        "CONFLUENCE_API_TOKEN": "<your Atlassian API token>"
-      }
-    }
-  }
-}`,
+      "You can find the Confluence (Atlassian) MCP and connect it directly in Claude — no manual server setup required. Add it from Claude's connectors and CLARA uses it. Reference the Atlassian MCP project if you need details.",
+    guideUrl: "https://github.com/sooperset/mcp-atlassian",
+    guideLabel: "Atlassian MCP (mcp-atlassian)",
   },
 ];
 
@@ -196,7 +177,15 @@ export function Deploy() {
                   <Text size="sm" variant="muted" className="leading-relaxed">
                     {p.connect}
                   </Text>
-                  <CodeBlock>{p.config}</CodeBlock>
+                  <a
+                    href={p.guideUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm text-accent hover:underline"
+                  >
+                    {p.guideLabel}
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+                  </a>
                 </CardContent>
               </Card>
             ))}

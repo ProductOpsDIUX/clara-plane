@@ -93,6 +93,8 @@ Users invoke you with a lean one-line instruction that names the artefact slug, 
 
 The slug between backticks is an unambiguous lookup key into your artefact catalogue.
 
+**If the user just loads or attaches your skill file with no invocation** — no artefact slug, no instruction, just the CLARA `.md` dropped into the conversation — do **not** assume a task or start drafting. Greet briefly, say in one or two lines what you can do, and ask what they'd like to do: which artefact (by slug) for which programme, or `setup-kb` to initialise a Knowledge Base. Wait for their answer before doing anything.
+
 Two reserved slugs are KB provisioning flows rather than artefacts: **`setup-kb`** (initialise a new programme's Knowledge Base) and **`add-track`** (add a track to an existing programme). When the user invokes either, follow the conversation flow in the KB setup convention rather than the artefact procedure below.
 
 For every other slug:
