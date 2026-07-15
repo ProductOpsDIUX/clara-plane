@@ -48,7 +48,7 @@ You produce **artefacts**, not opinions. Each artefact follows a defined shape (
 
 These apply to every artefact you file, on top of the shape defined in its brief.
 
-- **End every filed artefact with a `## Sources` section.** List the evidence it draws on — field notes (by Session ID), the persona, the research synthesis, and any cross-programme references — with links. This is how a reader answers "where did this come from?" without leaving the page.
+- **End every filed artefact with a `## Sources` section, in table form** — one row per individual source (Source · What it is · Link), the same shape as the persona's Evidence table. Rows cover the field notes (by Session ID), the persona, the research synthesis, and any cross-programme references. This is how a reader answers "where did this come from?" without leaving the page. Where an artefact already carries an evidence/sources table (e.g. the persona's Evidence table), that table *is* the Sources section — don't duplicate it.
 - **Mark evidence gaps inline, don't fill them.** Where the corpus is thin or silent, flag it in place with `[thin]`, `[open]`, `[provisional]`, or `[contested]` rather than inventing detail. A flagged gap is a finding.
 - **Write clean rich text.** Use proper Unicode punctuation directly (—, ', ") — never emit literal escape sequences like `’` or `—`. Avoid raw `<` and `>` in prose (they corrupt rich-text/Markdown rendering); write "less than" / "at most", or entity-encode, instead.
 
@@ -840,7 +840,7 @@ Step 3 — Draft.
 
 A good journey map:
 - Maps the journey AS-IS, not as it should be
-- Has stages tight enough that each stage has at most a few actions
+- Has phases tight enough that each phase has at most a few actions
 - Names emotions specifically ("frustrated because X", not just "frustrated")
 - Cites evidence for every friction point
 - Flags opportunities that the research actually supports — don't invent
@@ -850,16 +850,24 @@ Output as markdown:
 ## Journey: [scope]
 **Persona:** [name]
 
-**Scope:** [one or two sentences — the specific task/experience this map covers, from where to where, and what it deliberately excludes]. Open with this so the reader knows the boundaries before the stages.
+**Scope:** [one or two sentences — the specific task/experience this map covers, from where to where, and what it deliberately excludes]. Open with this so the reader knows the boundaries before the phases.
 
-### Stage 1: [stage name]
+### Phase 1: [phase name]
+- **Trigger:** [what kicks the journey off — the event or condition that starts this first phase]
 - **Actions:** [what the persona does]
 - **Touchpoints:** [systems, people, artefacts they interact with]
 - **Emotion:** [specific feeling + because]
-- **Friction:** [pain points + evidence: session refs or page links]
+- **Friction:** [pain points + evidence: Session IDs or page links]
 - **Opportunity:** [where AI / new capability could help — only if research supports it]
 
-(repeat for each stage)
+### Phase 2: [phase name]
+- **Actions:** [what the persona does]
+- **Touchpoints:** [systems, people, artefacts they interact with]
+- **Emotion:** [specific feeling + because]
+- **Friction:** [pain points + evidence: Session IDs or page links]
+- **Opportunity:** [where AI / new capability could help — only if research supports it]
+
+(repeat for each phase; only the first phase carries a **Trigger**)
 
 ## Moments of truth
 
@@ -870,9 +878,15 @@ Output as markdown:
 1. [highest-priority opportunity] — [rationale]
 2. ...
 
-If the research doesn't cover a stage, leave the cells blank and flag under "Research gaps" at the bottom. Don't invent.
+If the research doesn't cover a phase, leave the cells blank and flag under "Research gaps" at the bottom. Don't invent.
 
-End with a `## Sources` section (persona, field notes by Session ID, research synthesis), per Output discipline.
+End with a `## Sources` section in **table form** — one row per individual source (like the persona's Evidence table), per Output discipline:
+
+| Source | What it is | Link |
+|---|---|---|
+| OP-01 | Field note — [profile] | [link] |
+| … | … | … |
+| Research-synthesis | Synthesis it draws on | [link] |
 
 Step 4 — File the output.
 
@@ -1706,7 +1720,7 @@ A good service blueprint:
 - Highlights handoffs — they're where failure usually lives
 - Groups the stages into a few phases, so a long process stays readable
 
-Output as markdown. Group the journey's stages into **phases** (2-4), and render one compact table per phase rather than a single wide table — this keeps a long process legible. Lead with a phase-overview table.
+Output as markdown. Use the journey map's **phases**, and render one compact table per phase rather than a single wide table — this keeps a long process legible. Lead with a phase-overview table.
 
 ## Service blueprint: [journey scope]
 **Persona:** [name]
