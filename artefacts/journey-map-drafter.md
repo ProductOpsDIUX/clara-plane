@@ -79,7 +79,7 @@ Use this prompt to draft a current-state journey map — how a persona currently
 
 A good journey map:
 - Maps the journey AS-IS, not as it should be
-- Has stages tight enough that each stage has at most a few actions
+- Has phases tight enough that each phase has at most a few actions
 - Names emotions specifically ("frustrated because X", not just "frustrated")
 - Cites evidence for every friction point
 - Flags opportunities that the research actually supports — don't invent
@@ -89,16 +89,24 @@ Output as markdown:
 ## Journey: [scope]
 **Persona:** [name]
 
-**Scope:** [one or two sentences — the specific task/experience this map covers, from where to where, and what it deliberately excludes]. Open with this so the reader knows the boundaries before the stages.
+**Scope:** [one or two sentences — the specific task/experience this map covers, from where to where, and what it deliberately excludes]. Open with this so the reader knows the boundaries before the phases.
 
-### Stage 1: [stage name]
+### Phase 1: [phase name]
+- **Trigger:** [what kicks the journey off — the event or condition that starts this first phase]
 - **Actions:** [what the persona does]
 - **Touchpoints:** [systems, people, artefacts they interact with]
 - **Emotion:** [specific feeling + because]
-- **Friction:** [pain points + evidence: session refs or page links]
+- **Friction:** [pain points + evidence: Session IDs or page links]
 - **Opportunity:** [where AI / new capability could help — only if research supports it]
 
-(repeat for each stage)
+### Phase 2: [phase name]
+- **Actions:** [what the persona does]
+- **Touchpoints:** [systems, people, artefacts they interact with]
+- **Emotion:** [specific feeling + because]
+- **Friction:** [pain points + evidence: Session IDs or page links]
+- **Opportunity:** [where AI / new capability could help — only if research supports it]
+
+(repeat for each phase; only the first phase carries a **Trigger**)
 
 ## Moments of truth
 
@@ -109,9 +117,15 @@ Output as markdown:
 1. [highest-priority opportunity] — [rationale]
 2. ...
 
-If the research doesn't cover a stage, leave the cells blank and flag under "Research gaps" at the bottom. Don't invent.
+If the research doesn't cover a phase, leave the cells blank and flag under "Research gaps" at the bottom. Don't invent.
 
-End with a `## Sources` section (persona, field notes by Session ID, research synthesis), per Output discipline.
+End with a `## Sources` section in **table form** — one row per individual source (like the persona's Evidence table), per Output discipline:
+
+| Source | What it is | Link |
+|---|---|---|
+| OP-01 | Field note — [profile] | [link] |
+| … | … | … |
+| Research-synthesis | Synthesis it draws on | [link] |
 
 # filing
 

@@ -81,7 +81,7 @@ You produce **artefacts**, not opinions. Each artefact follows a defined shape (
 
 These apply to every artefact you file, on top of the shape defined in its brief.
 
-- **End every filed artefact with a `## Sources` section.** List the evidence it draws on — field notes (by Session ID), the persona, the research synthesis, and any cross-programme references — with links. This is how a reader answers "where did this come from?" without leaving the page.
+- **End every filed artefact with a `## Sources` section, in table form** — one row per individual source (Source · What it is · Link), the same shape as the persona's Evidence table. Rows cover the field notes (by Session ID), the persona, the research synthesis, and any cross-programme references. This is how a reader answers "where did this come from?" without leaving the page. Where an artefact already carries an evidence/sources table (e.g. the persona's Evidence table), that table *is* the Sources section — don't duplicate it.
 - **Mark evidence gaps inline, don't fill them.** Where the corpus is thin or silent, flag it in place with `[thin]`, `[open]`, `[provisional]`, or `[contested]` rather than inventing detail. A flagged gap is a finding.
 - **Write clean rich text.** Use proper Unicode punctuation directly (—, ', ") — never emit literal escape sequences like `’` or `—`. Avoid raw `<` and `>` in prose (they corrupt rich-text/Markdown rendering); write "less than" / "at most", or entity-encode, instead.
 

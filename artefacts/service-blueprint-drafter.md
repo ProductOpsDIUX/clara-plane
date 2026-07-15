@@ -71,7 +71,7 @@ A good service blueprint:
 - Highlights handoffs — they're where failure usually lives
 - Groups the stages into a few phases, so a long process stays readable
 
-Output as markdown. Group the journey's stages into **phases** (2-4), and render one compact table per phase rather than a single wide table — this keeps a long process legible. Lead with a phase-overview table.
+Output as markdown. Use the journey map's **phases**, and render one compact table per phase rather than a single wide table — this keeps a long process legible. Lead with a phase-overview table.
 
 ## Service blueprint: [journey scope]
 **Persona:** [name]
